@@ -79,16 +79,28 @@
 /* -------------------------------------------------- */
 /*  1 - RESET
 /* -------------------------------------------------- */
-/*Disable Mobile Webkit Highlights*/
-body {
-  -webkit-touch-callout: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
+/*Disable Mobile Webkit Highlights*/
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -103,6 +115,8 @@ footer, header, hgroup, menu, nav, section {
 a, a > * {
   margin: 0;
   padding: 0;
+  -webkit-transition: 400ms;
+          transition: 400ms;
   outline: none;
   text-decoration: none;
   background: transparent;
@@ -113,45 +127,54 @@ a:hover, a > *:hover {
   color: #a0a0a0;
 }
 
-/* BODY  BASIC */
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+ul {
+  list-style: none outside;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+/* -------------------------------------------------- */
+/*  2 - BODY BASIC
+/* -------------------------------------------------- */
 html {
   height: 100%;
 }
 
 body {
   background-color: #ffffff;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.75em;
+  color: #2d2d2d;
+  font-family: "Noto Serif";
+  font-size: 1.125em;
+  font-weight: 400;
+  line-height: 1em;
   -webkit-font-smoothing: antialiased;
   /* Fix for webkit rendering */
   -webkit-text-size-adjust: 100%;
 }
-body p {
-  color: #2d2d2d;
-  font-weight: 400;
-  font-size: 1em;
+
+::-webkit-selection {
+  background-color: #e7595b;
+  color: #ffffff;
+  text-shadow: none;
 }
 
-/* -------------------------------------------------- */
-/*  2.1 - TYPOGRAPHY
-/* -------------------------------------------------- */
-/* FONTS */
-h1, h2, h3, h4, h5, h6 {
-  font-family: "proxima_nova_semibold";
-  text-transform: uppercase;
+::-moz-selection {
+  background-color: #e7595b;
+  color: #ffffff;
+  text-shadow: none;
 }
 
-p {
-  font-family: "Roboto";
-}
-p.light {
-  font-weight: 300;
-}
-p.regular {
-  font-weight: 400;
-}
-p.bold {
-  font-weight: 700;
+::selection {
+  background-color: #e7595b;
+  color: #ffffff;
+  text-shadow: none;
 }
 
 /* -------------------------------------------------- */
@@ -161,16 +184,16 @@ p.bold {
   clear: both;
   display: block;
   height: 0;
-  overflow: hidden;
   visibility: hidden;
+  overflow: hidden;
   width: 0;
 }
 
 .clearfix:after {
   clear: both;
   display: block;
-  visibility: hidden;
   height: 0;
+  visibility: hidden;
   content: ".";
 }
 
@@ -225,6 +248,249 @@ img.alignright {
 
 .affix {
   position: fixed;
+}
+
+/* -------------------------------------------------- */
+/*  2.3 - TYPOGRAPHY
+/* -------------------------------------------------- */
+/* FONTS */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "proxima_nova_semibold";
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Noto Serif";
+  font-size: 1.125em;
+  line-height: 1.4em;
+}
+p.light {
+  font-weight: 300;
+}
+p.regular {
+  font-weight: 400;
+}
+p.bold {
+  font-weight: 700;
+}
+
+/* -------------------------------------------------- */
+/*  2.4 - FORMS
+/* -------------------------------------------------- */
+/* FormHack v1.1.0 (formhack.io) */
+/* Global Reset Styles ------------------ */
+input,
+textarea,
+select,
+option,
+optgroup,
+button,
+legend,
+fieldset {
+  box-sizing: border-box;
+  outline: none;
+  font-family: "proxima_nova_light";
+  font-size: 18px;
+  color: #2d2d2d;
+  vertical-align: top;
+  display: block;
+  margin: 10px 0;
+}
+
+datalist {
+  font-family: "proxima_nova_light";
+  font-size: 18px;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+/* Input & Textarea ------------------ */
+/* Fields with standard width */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  border: 0px solid #2d2d2d;
+  -webkit-transition: 800ms;
+          transition: 800ms;
+}
+
+/* Fields with standard height */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list] {
+  height: 40px;
+  -webkit-appearance: none;
+}
+
+/* Other */
+textarea {
+  -webkit-appearance: none;
+  overflow: auto;
+}
+
+input[type="range"] {
+  height: 40px;
+  width: 100%;
+  max-width: 400px;
+}
+
+input[type="file"] {
+  min-height: 40px;
+}
+
+input[type="search"] {
+  height: 40px;
+  -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Select ------------------ */
+select {
+  height: 40px;
+}
+
+select[multiple] {
+  height: auto;
+  min-height: 40px;
+  padding: 0;
+}
+select[multiple] option {
+  margin: 0;
+  padding: 8px;
+}
+
+/* Fieldset ------------------ */
+fieldset {
+  padding: 10px 25px;
+  border-radius: 3px;
+  border: 0px solid #2d2d2d;
+}
+
+legend {
+  padding: 0 5px;
+  font-weight: 700;
+}
+
+/* Buttons, Input Type Submit/Reset ------------------ */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="image"] {
+  height: 40px;
+  width: 100%;
+  max-width: 200px;
+  background-color: #d8444b;
+  padding: 8px;
+  cursor: pointer;
+  color: #f5f5f5;
+  font-weight: 400;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 3px;
+  border: 0px solid #2d2d2d;
+  -webkit-transition: 800ms;
+          transition: 800ms;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+input[type="image"] {
+  text-align: center;
+  padding: 8px;
+}
+
+/* States ------------------ */
+input[disabled],
+textarea[disabled],
+select[disabled],
+option[disabled],
+button[disabled] {
+  cursor: not-allowed;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+option:focus,
+button:focus {
+  background-color: rgba(160, 160, 160, 0.8);
+  border-color: #2d2d2d;
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: #2d2d2d solid 2px;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus {
+  background-color: #e7595b;
+  color: #f5f5f5;
+}
+
+/* -------------------------------------------------- */
+/*  2.5 - DROPCAPS
+/* -------------------------------------------------- */
+.dropcap::first-letter {
+  float: left;
+  font-family: "Noto Serif";
+  font-size: 6.11111em;
+  font-weight: 400;
+  line-height: 80px;
+  color: #d8444b;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: -1px;
 }
 
 .box {

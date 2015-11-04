@@ -26,28 +26,9 @@
 }
 
 
-// TITLES AND PARAGRAPHS
-// Tipography
-$proxima-nova-sb: 'proxima_nova_semibold';
-$proxima-nova-light: 'proxima_nova_light';
-$roboto: 'Roboto';
-
-// Weights
-$light: 300;
-$regular: 400;
-$bold: 700;
-
-// Colores
-$black: #000000;
-$white: #ffffff;
-
-$dark-grey: #2d2d2d;
-$grey: #464646;
-$light-grey: #a0a0a0;
-$near-white: #f5f5f5;
-$red: #d8444b;
-$light-red: #e7595b;
-$alt-red: #F46969;
+@import "variables.scss";
+@import "functions.scss";
+@import "mixins.scss";
 
 
 // ATRIBUTES
@@ -70,42 +51,33 @@ $alt-red: #F46969;
 .light-red-bg { background-color: $light-red; }
 
 
-// MIXINS
-
-@mixin slow-speed {
-    transition: 800ms;
-}
-
-@mixin normal-speed {
-    transition: 400ms;
-}
-
-@mixin fast-speed {
-    transition: 200ms;
-}
-
-@mixin center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@mixin reset {
-    margin: 0;
-    padding: 0;
-}
-
-
 
 
 /* -------------------------------------------------- */
 /*  1 - RESET
 /* -------------------------------------------------- */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    @include body-reset;
+}
+
+
 /*Disable Mobile Webkit Highlights*/
 body {
-    -webkit-touch-callout: none;
-    -khtml-user-select: none;
-    user-select: none;
+    // -webkit-touch-callout: none;
+    // -khtml-user-select: none;
+    // user-select: none;
 }
 
 article,aside,details,figcaption,figure,
@@ -120,6 +92,7 @@ footer,header,hgroup,menu,nav,section { display: block; }
 
 a, a > * {
     @include reset;
+    @include speed-normal;
     outline: none;
     text-decoration: none;
     background: transparent;
@@ -130,15 +103,14 @@ a, a > * {
     }
 }
 
-// TODO: mirar esto
-// nav ul, nav ol {
-//     list-style: none;
-//     list-style-image: none;
-// }
+nav ul, nav ol {
+    list-style: none;
+    list-style-image: none;
+}
 
-// ul { list-style: none outside; }
+ul { list-style: none outside; }
 
-// ol { list-style-position: inside; }
+ol { list-style-position: inside; }
 
 // .not-ie a {
 //   -webkit-transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out;
@@ -157,7 +129,9 @@ a, a > * {
 
 
 
-/* BODY  BASIC */
+/* -------------------------------------------------- */
+/*  2 - BODY BASIC
+/* -------------------------------------------------- */
 
 html {
     height: 100%;
@@ -165,65 +139,27 @@ html {
 
 body {
     background-color: $white;
-    p {
-        color: $dark-grey;
-        font-weight: $regular;
-        font-size: 1em;
-
+    color: $dark-grey;
+    font: {
+        family: $noto-serif;
+        size: 1.125em;
+        weight: $regular;
     }
-
-    // a {
-    //     // @include slow-speed;
-    //     color: $red;
-    //     text-decoration: none;
-    // }
-
-    // a:hover {
-    //     color: $alt-red;
-    // }
-
-
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.75em;
+    line-height: $body-line;
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
     -webkit-text-size-adjust: 100%;
 }
 
-
-/* -------------------------------------------------- */
-/*  2.1 - TYPOGRAPHY
-/* -------------------------------------------------- */
-
-// Textos
-/* FONTS */
-h1, h2, h3, h4, h5, h6 {
-    font: {
-        family: $proxima_nova_sb;
-    }
-    text-transform: uppercase;
+::-webkit-selection {
+    background-color: $light-red;
+    color: $white;
+    text-shadow: none;
 }
 
-// TODO: mirar tamaños y hacerlos automatizados con porcentajes em
-// h1 { font-size: 60px; }
-// h2 { font-size: 45px; }
-// h3 { font-size: 32px; }
-// h4 { font-size: 26px; }
-// h5 { font-size: 18px; }
-// h6 { font-size: 14px; }
-
-p {
-    font: {
-        family: $roboto;
-    }
-    &.light {
-        font-weight: $light;
-    }
-    &.regular {
-        font-weight: $regular;
-    }
-    &.bold {
-        font-weight: $bold;
-    }
+::selection {
+    background-color: $light-red;
+    color: $white;
+    text-shadow: none;
 }
 
 
@@ -231,23 +167,17 @@ p {
 /* -------------------------------------------------- */
 /*  2.1 - CLEARFIX
 /* -------------------------------------------------- */
+
 .clear {
-    clear: both;
-    display: block;
-    height: 0;
+    @include clearfix;
     overflow: hidden;
-    visibility: hidden;
     width: 0;
 }
 
 .clearfix:after {
-    clear: both;
-    display: block;
-    visibility: hidden;
-    height: 0;
+    @include clearfix;
     content: ".";
 }
-
 
 
 /* -------------------------------------------------- */
@@ -271,6 +201,82 @@ img.alignright { margin-left: 20px; }
 .show       { display: block; }
 .invisible  { visibility: hidden; }
 .affix      { position: fixed; }
+
+
+/* -------------------------------------------------- */
+/*  2.3 - TYPOGRAPHY
+/* -------------------------------------------------- */
+
+/* FONTS */
+h1, h2, h3, h4, h5, h6 {
+    font: {
+        family: $proxima_nova_sb;
+    }
+    text-transform: uppercase;
+}
+
+// TODO: mirar tamaños y hacerlos automatizados con porcentajes em
+// h1 { font-size: 60px; }
+// h2 { font-size: 45px; }
+// h3 { font-size: 32px; }
+// h4 { font-size: 26px; }
+// h5 { font-size: 18px; }
+// h6 { font-size: 14px; }
+
+p {
+    font: {
+        family: $noto-serif;
+        size: 1.125em;
+    }
+
+    line-height: 1.4em;
+
+    &.light {
+        font-weight: $light;
+    }
+    &.regular {
+        font-weight: $regular;
+    }
+    &.bold {
+        font-weight: $bold;
+    }
+
+}
+
+
+
+/* -------------------------------------------------- */
+/*  2.4 - FORMS
+/* -------------------------------------------------- */
+
+@import "formhack.scss";
+
+
+
+
+/* -------------------------------------------------- */
+/*  2.5 - DROPCAPS
+/* -------------------------------------------------- */
+
+.dropcap::first-letter {
+    float: left;
+    font: {
+        family: $noto-serif;
+        size: em(110px);
+        weight: $regular;
+    }
+
+    line-height: 80px;
+    color: $red;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: -1px;
+}
+
+
+
+
+
 
 
 
