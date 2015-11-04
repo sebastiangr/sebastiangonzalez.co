@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'proxima_nova_semibold';
   src: url("../fonts/Proxima-Nova-Semibold.eot");
@@ -262,7 +263,8 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-family: "Noto Serif";
   font-size: 1.125em;
-  line-height: 1.4em;
+  text-align: justify;
+  line-height: 1.5;
 }
 p.light {
   font-weight: 300;
@@ -484,13 +486,100 @@ input[type="reset"]:focus {
 .dropcap::first-letter {
   float: left;
   font-family: "Noto Serif";
-  font-size: 6.11111em;
+  font-size: 5em;
   font-weight: 400;
   line-height: 80px;
   color: #d8444b;
   padding-right: 10px;
+  margin-top: 5px;
+}
+
+/*Quotations*/
+q {
+  display: inline;
+  color: #464646;
+  font-family: "Noto Serif";
+  font-size: 22px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+}
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
+}
+
+/*Quotations Important*/
+.important {
+  margin: 50px 20px 70px 85px;
+}
+.important q:before {
+  content: "''";
+  position: absolute;
+  color: #d8444b;
+  font-family: "Noto Serif";
+  font-size: 6.875em;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 80px;
+  padding-right: 10px;
   margin-top: 10px;
   margin-bottom: -1px;
+  margin-left: -75px;
+}
+.important q:after {
+  content: "''";
+}
+
+.quote {
+  margin: 50px 20px;
+}
+
+.author {
+  float: right;
+  font-size: 1em;
+  font-weight: 300;
+  color: #a0a0a0;
+  line-height: 1.4;
+}
+
+/* ARTICLE STYLES */
+article p {
+  margin-right: 70px;
+  margin-left: 70px;
+}
+article .pie p {
+  color: #a0a0a0;
+  font-family: "proxima_nova_light";
+  font-size: 0.875em;
+  font-weight: 300;
+  line-height: 1.4;
+}
+article .pie p:before {
+  display: block;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #a0a0a0;
+  margin-top: 15px;
+}
+
+/*Im├ígenes blog*/
+.image {
+  padding: 20px 0;
+  margin-right: -30px;
+  margin-left: -20px;
+}
+.image p {
+  margin: 0px;
+  color: #a0a0a0;
+  font-family: "proxima_nova_light";
+  font-size: 0.875em;
+  font-weight: 300;
+  line-height: 1.4;
+  padding-left: 20px;
 }
 
 .box {
