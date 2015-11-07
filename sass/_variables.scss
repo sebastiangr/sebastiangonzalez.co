@@ -31,6 +31,33 @@ $dark-grey: #2d2d2d;
 $grey: #464646;
 $light-grey: #a0a0a0;
 $near-white: #f5f5f5;
+$dark-red: #bf3643;
 $red: #d8444b;
 $light-red: #e7595b;
 $alt-red: #F46969;
+
+
+// Titles
+$blog-title: (
+    'font': $proxima-nova-sb,
+    'weight': $regular,
+    'size': em(60px,18px),
+    'color': $black,
+    'up': true
+);
+
+$entry-title: (
+    'font': $noto-serif,
+    'weight': $bold,
+    'size': em(32px,18px),
+    'color': $black,
+    'up': false
+);
+
+$suscribe-title: (
+    'font': $proxima-nova-light,
+    'weight': $light,
+    'size': em(26px,18px),
+    'color': $white,
+    'up': false
+);

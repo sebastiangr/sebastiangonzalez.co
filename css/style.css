@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: 'proxima_nova_semibold';
   src: url("../fonts/Proxima-Nova-Semibold.eot");
@@ -263,7 +262,17 @@ img.alignright {
 /* FONTS */
 h1, h2, h3, h4, h5, h6 {
   font-family: "proxima_nova_semibold";
+}
+
+h1 {
+  color: #000000;
+  font-size: 3.33333em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
   text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
 }
 
 p {
@@ -344,12 +353,13 @@ select,
 textarea {
   width: 100%;
   max-width: 400px;
-  padding: 8px;
+  padding: 10px;
+  padding-left: 20px;
   background-color: #f5f5f5;
   border-radius: 3px;
   border: 0px solid #2d2d2d;
-  -webkit-transition: 800ms;
-          transition: 800ms;
+  -webkit-transition: 400ms;
+          transition: 400ms;
 }
 
 /* Fields with standard height */
@@ -367,7 +377,7 @@ input[type="time"],
 input[type="url"],
 input[type="week"],
 input[list] {
-  height: 40px;
+  height: 50px;
   -webkit-appearance: none;
 }
 
@@ -378,17 +388,17 @@ textarea {
 }
 
 input[type="range"] {
-  height: 40px;
+  height: 50px;
   width: 100%;
   max-width: 400px;
 }
 
 input[type="file"] {
-  min-height: 40px;
+  min-height: 50px;
 }
 
 input[type="search"] {
-  height: 40px;
+  height: 50px;
   -webkit-appearance: none;
 }
 
@@ -405,17 +415,17 @@ input[type="radio"] {
 
 /* Select ------------------ */
 select {
-  height: 40px;
+  height: 50px;
 }
 
 select[multiple] {
   height: auto;
-  min-height: 40px;
+  min-height: 50px;
   padding: 0;
 }
 select[multiple] option {
   margin: 0;
-  padding: 8px;
+  padding: 10px;
 }
 
 /* Fieldset ------------------ */
@@ -436,11 +446,11 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"],
 input[type="image"] {
-  height: 40px;
+  height: 50px;
   width: 100%;
   max-width: 200px;
   background-color: #d8444b;
-  padding: 8px;
+  padding: 10px;
   cursor: pointer;
   color: #f5f5f5;
   font-weight: 400;
@@ -456,7 +466,7 @@ input[type="image"] {
 
 input[type="image"] {
   text-align: center;
-  padding: 8px;
+  padding: 10px;
 }
 
 /* States ------------------ */
@@ -490,12 +500,15 @@ button:focus,
 input[type="button"]:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus {
-  background-color: #e7595b;
+  background-color: #bf3643;
   color: #f5f5f5;
 }
 
-/* Footnote styles generator */
-.quote.important .author, article .article-bottom p.footnote, .image p.footnote {
+/* -------------------------------------------------- */
+/*  2.5 - CONTENT BLOG
+/* -------------------------------------------------- */
+/* FOOTNOTE STYLES GENERATOR */
+.quote.important .author, article .article-bottom p.footnote, .image p.footnote, section#suscribe form#suscribe-form p {
   color: #a0a0a0;
   font-size: 0.75em;
   font-family: "proxima_nova_light";
@@ -504,7 +517,7 @@ input[type="reset"]:focus {
   letter-spacing: 0.05em;
 }
 
-/* Quotations */
+/* QUOTATIONS */
 .quote {
   margin: 40px 170px;
 }
@@ -548,14 +561,23 @@ input[type="reset"]:focus {
   content: "''";
 }
 
-/* ARTICLE STYLES */
+/* ARTICLE BLOCK STYLES */
 article {
   margin-top: 60px;
   margin-bottom: 60px;
 }
-article p {
+article p, article h2 {
   margin-right: 70px;
   margin-left: 70px;
+}
+article h2 {
+  color: #000000;
+  font-size: 1.77778em;
+  font-family: "Noto Serif";
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  padding-bottom: 12px;
 }
 article .article-bottom p.footnote:before {
   height: 1px;
@@ -567,7 +589,7 @@ article .article-bottom p.footnote:before {
   background-color: #a0a0a0;
 }
 
-/*Im├ígenes blog*/
+/*BLOG IMAGES*/
 .image {
   padding: 20px 0;
   margin: 0px;
@@ -575,17 +597,67 @@ article .article-bottom p.footnote:before {
 .image img {
   padding-right: 70px;
 }
+@media (max-width: 767px) {
+  .image img {
+    padding-right: 0px;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    -ms-interpolation-mode: bicubic;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .image img {
+    padding-right: 0px;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    -ms-interpolation-mode: bicubic;
+  }
+}
 .image p.footnote {
   padding-top: 8px;
   margin: 0px;
 }
 
-.grid {
-  padding-left: 20px;
-  padding-right: 10px;
+/* SUSCRIBE BLOCK */
+section#suscribe {
+  background-color: #2d2d2d;
+}
+section#suscribe form#suscribe-form {
+  padding: 65px 170px;
+}
+@media (max-width: 767px) {
+  section#suscribe form#suscribe-form {
+    padding: 65px 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  section#suscribe form#suscribe-form {
+    padding: 65px 60px;
+  }
+}
+section#suscribe form#suscribe-form h2 {
+  color: #ffffff;
+  font-size: 1.44444em;
+  font-family: "proxima_nova_light";
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+section#suscribe form#suscribe-form p {
+  text-align: center;
+  padding-top: 10px;
+}
+section#suscribe form#suscribe-form input {
+  max-width: 100%;
+}
+section#suscribe form#suscribe-form button {
+  max-width: 100%;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   background-color: #2d2d2d;
 }

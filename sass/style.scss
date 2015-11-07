@@ -224,7 +224,12 @@ h1, h2, h3, h4, h5, h6 {
     font: {
         family: $proxima_nova_sb;
     }
-    text-transform: uppercase;
+    // text-transform: uppercase;
+}
+
+h1 {
+    @include title($blog-title...);
+    text-align: center;
 }
 
 // TODO: mirar tamaños y hacerlos automatizados con porcentajes em
@@ -286,9 +291,11 @@ p {
 @import "formhack.scss";
 
 
+/* -------------------------------------------------- */
+/*  2.5 - CONTENT BLOG
+/* -------------------------------------------------- */
 
-
-/* Footnote styles generator */
+/* FOOTNOTE STYLES GENERATOR */
 %footnote {
     color: $light-grey;
     font: {
@@ -301,7 +308,7 @@ p {
 }
 
 
-/* Quotations */
+/* QUOTATIONS */
 .quote {
 
     @include margin(40px 170px);
@@ -351,14 +358,18 @@ p {
 }
 
 
-
-/* ARTICLE STYLES */
+/* ARTICLE BLOCK STYLES */
 article {
 
     @include margin(60px null);
 
-    & p {
+    & p, h2 {
         @include margin(null 70px);
+    }
+
+    & h2 {
+        @include title($entry-title...);
+        padding-bottom: 12px;
     }
 
     // Article bottom credits
@@ -378,7 +389,8 @@ article {
 
 }
 
-/*Imágenes blog*/
+
+/*BLOG IMAGES*/
 .image {
     @include padding(20px 0);
     // For mobile!!!
@@ -387,6 +399,23 @@ article {
 
     img {
         padding-right: 70px;
+
+        @include mobile {
+            padding-right: 0px;
+            border: 0;
+            height: auto;
+            max-width: 100%;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        @include tablet {
+            padding-right: 0px;
+            border: 0;
+            height: auto;
+            max-width: 100%;
+            -ms-interpolation-mode: bicubic;
+            // @include padding(65px 60px);
+        }
     }
 
     & p.footnote {
@@ -398,15 +427,60 @@ article {
 
 
 
-.grid {
-        padding-left: 20px;
-        padding-right: 10px;
+// .grid {
+//         padding-left: 20px;
+//         padding-right: 10px;
+//         @include mobile {
+//             width: 100%;
+//             min-width: 0;
+//             margin-left: 0px;
+//             margin-right: 0px;
+//         }
+
+//     }
+
+
+
+
+
+/* SUSCRIBE BLOCK */
+section#suscribe {
+    background-color: $dark-grey;
+
+    form#suscribe-form {
+        @include padding(65px 170px);
+
+        @include mobile {
+            @include padding(65px 20px);
+        }
+
+        @include tablet {
+            @include padding(65px 60px);
+        }
+
+
+        h2 {
+            @include title($suscribe-title...);
+            text-align: center;
+        }
+        p {
+            @extend %footnote;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        input {
+            max-width: 100%;
+        }
+        button {
+            max-width: 100%;
+        }
     }
+}
 
 
 
-
-/* Footer */
+/* FOOTER */
 footer {
 
     background-color: $dark-grey;

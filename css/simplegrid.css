@@ -43,6 +43,10 @@ body {
 	padding-right: 0px; /* grid-space to right: (grid-space-left - column-space) e.g. 20px-20px=0 */
 }
 
+.grid-nopad {
+	padding: 0px !important;
+}
+
 .push-right {
 	float: right;
 }
@@ -122,6 +126,10 @@ body {
 	width: 58.33%
 }
 
+/* Last no-margin */
+.col-last {
+    padding-right: 0px;
+}
 
 
 /* Pushing blocks */

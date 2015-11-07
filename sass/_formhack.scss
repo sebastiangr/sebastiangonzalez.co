@@ -18,7 +18,7 @@ $fh-border-style: solid !default;
 $fh-border-color: $dark-grey !default;
 
 // Inputs, Textareas, Select, Option
-$fh-input-height: 40px !default;
+$fh-input-height: 50px !default;
 $fh-input-width: 100% !default;
 $fh-input-max-width: 400px !default;
 
@@ -38,12 +38,12 @@ $fh-allow-vendor-styling: true !default;
 $fh-fieldset-bare: false !default;
 
 // Buttons & Input Submits
-$fh-button-height: 40px !default;
+$fh-button-height: 50px !default;
 $fh-button-width: 100% !default;
 $fh-button-max-width: 200px !default;
 $fh-button-font-color: $near-white !default;
 $fh-button-bg-color: $red !default;
-$fh-button-hover-bg-color: $light-red !default;
+$fh-button-hover-bg-color: $dark-red !default;
 $fh-button-hover-font-color: $near-white !default;
 
 // Layout
@@ -121,6 +121,7 @@ textarea {
 	width: $fh-input-width;
 	max-width: $fh-input-max-width;
 	padding: $fh-input-height / 5;
+	padding-left: 20px;
 	background-color: $fh-input-bg-color;
 
 	-webkit-border-radius: $fh-border-radius;
@@ -128,7 +129,7 @@ textarea {
 	border-radius: $fh-border-radius;
 	border: $fh-border-width $fh-border-style $fh-border-color;
 
-    @include speed-slow;
+    @include speed-normal;
 }
 
 /* Fields with standard height */

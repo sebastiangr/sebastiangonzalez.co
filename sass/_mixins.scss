@@ -47,14 +47,17 @@
 
 // TEXT PREFS
 // Titles
-@mixin title($weight, $size, $color) {
+@mixin title($font, $weight, $size, $color, $up) {
     color: $color;
     font: {
         size: $size;
-        family: $proxima-nova-sb;
+        family: $font;
         weight: $weight;
     }
-    text-transform: uppercase;
+    @if $up == true {
+        text-transform: uppercase;
+    }
+    line-height: $golden;
     letter-spacing: $spacing;
 }
 
@@ -72,18 +75,32 @@
     letter-spacing: $spacing;
 }
 
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+$big-width: 1140px;
 
-// $tablet-width: 768px;
-// $desktop-width: 1024px;
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
 
-// @mixin tablet {
-//   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-//     @content;
-//   }
-// }
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
 
-// @mixin desktop {
-//   @media (min-width: #{$desktop-width}) {
-//     @content;
-//   }
-// }
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$big-width - 1px}) {
+    @content;
+  }
+}
+
+
+@mixin big {
+  @media (min-width: #{$big-width}) {
+    @content;
+  }
+}
