@@ -141,6 +141,13 @@ ol {
   list-style-position: inside;
 }
 
+img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+  -ms-interpolation-mode: bicubic;
+}
+
 /* -------------------------------------------------- */
 /*  2 - BODY BASIC
 /* -------------------------------------------------- */
@@ -230,9 +237,8 @@ img.alignright {
 }
 
 .aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: table;
+  margin: 0 auto;
 }
 
 .hide {
@@ -274,6 +280,14 @@ p.regular {
 }
 p.bold {
   font-weight: 700;
+}
+p.dropcap::first-letter {
+  float: left;
+  font-size: 5em;
+  line-height: 80px;
+  color: #d8444b;
+  padding-right: 10px;
+  margin-top: 5px;
 }
 
 /* -------------------------------------------------- */
@@ -480,42 +494,40 @@ input[type="reset"]:focus {
   color: #f5f5f5;
 }
 
-/* -------------------------------------------------- */
-/*  2.5 - DROPCAPS
-/* -------------------------------------------------- */
-.dropcap::first-letter {
-  float: left;
-  font-family: "Noto Serif";
-  font-size: 5em;
-  font-weight: 400;
-  line-height: 80px;
-  color: #d8444b;
-  padding-right: 10px;
-  margin-top: 5px;
+/* Footnote styles generator */
+.quote.important .author, article .article-bottom p.footnote, .image p.footnote {
+  color: #a0a0a0;
+  font-size: 0.75em;
+  font-family: "proxima_nova_light";
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
 }
 
-/*Quotations*/
-q {
+/* Quotations */
+.quote {
+  margin: 40px 170px;
+}
+.quote q {
   display: inline;
   color: #464646;
+  font-size: 1.22222em;
   font-family: "Noto Serif";
-  font-size: 22px;
   font-weight: 300;
   font-style: italic;
   line-height: 1.5;
+  letter-spacing: 0.05em;
 }
-q:before {
+.quote q:before {
   content: open-quote;
 }
-q:after {
+.quote q:after {
   content: close-quote;
 }
-
-/*Quotations Important*/
-.important {
-  margin: 50px 20px 70px 85px;
+.quote.important {
+  margin: 50px 170px 70px 238px;
 }
-.important q:before {
+.quote.important q:before {
   content: "''";
   position: absolute;
   color: #d8444b;
@@ -529,57 +541,102 @@ q:after {
   margin-bottom: -1px;
   margin-left: -75px;
 }
-.important q:after {
+.quote.important .author {
+  float: right;
+}
+.quote q:after {
   content: "''";
 }
 
-.quote {
-  margin: 50px 20px;
-}
-
-.author {
-  float: right;
-  font-size: 1em;
-  font-weight: 300;
-  color: #a0a0a0;
-  line-height: 1.4;
-}
-
 /* ARTICLE STYLES */
+article {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
 article p {
   margin-right: 70px;
   margin-left: 70px;
 }
-article .pie p {
-  color: #a0a0a0;
-  font-family: "proxima_nova_light";
-  font-size: 0.875em;
-  font-weight: 300;
-  line-height: 1.4;
-}
-article .pie p:before {
+article .article-bottom p.footnote:before {
+  height: 1px;
+  width: 300px;
+  margin-top: 15px;
+  margin-bottom: 12px;
   display: block;
   content: "";
-  height: 1px;
-  width: 100%;
   background-color: #a0a0a0;
-  margin-top: 15px;
 }
 
 /*Im├ígenes blog*/
 .image {
   padding: 20px 0;
-  margin-right: -30px;
-  margin-left: -20px;
-}
-.image p {
   margin: 0px;
-  color: #a0a0a0;
-  font-family: "proxima_nova_light";
-  font-size: 0.875em;
-  font-weight: 300;
-  line-height: 1.4;
+}
+.image img {
+  padding-right: 70px;
+}
+.image p.footnote {
+  padding-top: 8px;
+  margin: 0px;
+}
+
+.grid {
   padding-left: 20px;
+  padding-right: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #2d2d2d;
+}
+footer .footer {
+  height: 300px;
+}
+footer p.footerInfo {
+  color: #464646;
+  font-size: 0.75em;
+  font-family: "proxima_nova_light";
+  text-align: center;
+}
+footer .preFooter {
+  height: 200px;
+}
+footer .preFooter ul {
+  display: table;
+  margin: 0 auto;
+  padding-top: 85px;
+}
+footer .preFooter ul li {
+  color: #f5f5f5;
+  font-family: "proxima_nova_light";
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  float: left;
+  padding-right: 80px;
+}
+footer .preFooter ul li:last-child {
+  padding-right: 0px;
+}
+footer .preFooter ul li a {
+  color: #f5f5f5;
+}
+footer .preFooter ul li a:hover {
+  color: #a0a0a0;
+}
+footer .logoFooter {
+  height: 120px;
+  width: 120px;
+  font-size: 7.5em;
+  color: #a0a0a0;
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+footer .logoFooter:hover {
+  color: #FFFFFF;
 }
 
 .box {
@@ -612,9 +669,8 @@ article .pie p:before {
 .big-box {
   width: 400px;
   height: 100px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: table;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */

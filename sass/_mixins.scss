@@ -1,28 +1,32 @@
 // MIXINS
 
+// Speed
 @mixin speed-slow {
     transition: 800ms;
 }
-
 @mixin speed-normal {
     transition: 400ms;
 }
-
 @mixin speed-fast {
     transition: 200ms;
 }
 
+// Center block
 @mixin center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    // display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+    display: table;
+    margin: 0 auto;
 }
 
+// Reset margin and padding
 @mixin reset {
     margin: 0;
     padding: 0;
 }
 
+// Reset body
 @mixin body-reset {
     @include reset;
     border: 0;
@@ -32,9 +36,54 @@
     background: transparent;
 }
 
+// Clearfix
 @mixin clearfix {
     clear: both;
     display: block;
     height: 0;
     visibility: hidden;
 }
+
+
+// TEXT PREFS
+// Titles
+@mixin title($weight, $size, $color) {
+    color: $color;
+    font: {
+        size: $size;
+        family: $proxima-nova-sb;
+        weight: $weight;
+    }
+    text-transform: uppercase;
+    letter-spacing: $spacing;
+}
+
+// Quotes
+@mixin quote {
+    display: inline;
+    color: $grey;
+    font: {
+        size: em(22px, 18px);
+        family: $noto-serif;
+        weight: $light;
+        style: italic;
+    }
+    line-height: $golden;
+    letter-spacing: $spacing;
+}
+
+
+// $tablet-width: 768px;
+// $desktop-width: 1024px;
+
+// @mixin tablet {
+//   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+//     @content;
+//   }
+// }
+
+// @mixin desktop {
+//   @media (min-width: #{$desktop-width}) {
+//     @content;
+//   }
+// }

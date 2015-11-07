@@ -1,11 +1,12 @@
-// TITLES AND PARAGRAPHS
+// VARIABLES
+
 // Tipography
 $proxima-nova-sb: 'proxima_nova_semibold';
 $proxima-nova-light: 'proxima_nova_light';
 $noto-serif: 'Noto Serif';
 
 // Constants
-$golden: 1.5; //Redondeado de 1.61803398875
+$golden: 1.5; //Rounded down 1.61803398875
 
 // Weights
 $light: 300;
@@ -15,11 +16,14 @@ $bold: 700;
 // Line Height
 $body-line: 1em;
 
+// Letter spacing
+$spacing: 0.05em;
+
 // Sizes
 $body-size: 18px;
 $footer-size: 1em/2;
 
-// Colores
+// Colors
 $black: #000000;
 $white: #ffffff;
 

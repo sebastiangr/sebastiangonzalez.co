@@ -129,6 +129,13 @@ ol { list-style-position: inside; }
 // }
 
 
+img {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    -ms-interpolation-mode: bicubic;
+}
+
 
 
 
@@ -213,6 +220,7 @@ img.alignright { margin-left: 20px; }
 
 /* FONTS */
 h1, h2, h3, h4, h5, h6 {
+
     font: {
         family: $proxima_nova_sb;
     }
@@ -233,6 +241,14 @@ p {
         size: $body-size;
     }
 
+      // @include tablet {
+      //   font-size: 40px;
+      // }
+
+      // @include desktop {
+      //   font-size: 60px;
+      // }
+
     text-align: justify;
     line-height: $golden;
 
@@ -244,6 +260,19 @@ p {
     }
     &.bold {
         font-weight: $bold;
+    }
+
+    &.dropcap::first-letter {
+        float: left;
+        font: {
+            // size: 5em;
+            size: em(90px,18px);
+        }
+
+        line-height: 80px;
+        color: $red;
+        padding-right: 10px;
+        margin-top: 5px;
     }
 
 }
@@ -259,83 +288,61 @@ p {
 
 
 
-/* -------------------------------------------------- */
-/*  2.5 - DROPCAPS
-/* -------------------------------------------------- */
-
-.dropcap::first-letter {
-    float: left;
+/* Footnote styles generator */
+%footnote {
+    color: $light-grey;
     font: {
-        family: $noto-serif;
-        // size: em(110px);
-        size: 5em;
-        weight: $regular;
-    }
-
-    line-height: 80px;
-    color: $red;
-    padding-right: 10px;
-    margin-top: 5px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Quotations*/
-q {
-    display: inline;
-    color: $grey;
-
-    font: {
-        family: $noto-serif;
-        size: 22px;
+        size: em(12px);
+        family: $proxima-nova-light;
         weight: $light;
-        style: italic;
     }
-
     line-height: $golden;
-
-    &:before {
-        content: open-quote;
-    }
-    &:after {
-        content: close-quote;
-    }
+    letter-spacing: $spacing;
 }
 
 
-/*Quotations Important*/
-.important {
-    @include margin(50px 20px 70px 85px);
+/* Quotations */
+.quote {
 
-    & q:before {
-        content: "''";
-        position: absolute;
-        color: $red;
+    @include margin(40px 170px);
 
-        font: {
-            family: $noto-serif;
-            size: em(110px);
-            weight: $regular;
-            style: italic;
+    // Simple quote
+    q {
+        @include quote;
+
+        &:before {
+            content: open-quote;
+        }
+        &:after {
+            content: close-quote;
+        }
+    }
+
+    // Important quote - with Big ''
+    &.important {
+        @include margin(50px 170px 70px 238px);
+
+        & q:before {
+            content: "''";
+            position: absolute;
+            color: $red;
+
+            font: {
+                family: $noto-serif;
+                size: em(110px);
+                weight: $regular;
+                style: italic;
+            }
+
+            line-height: 80px;
+            padding-right: 10px;
+            @include margin(10px null -1px -75px);
         }
 
-        line-height: 80px;
-        padding-right: 10px;
-        @include margin(10px null -1px -75px);
+        .author {
+            @extend %footnote;
+            float: right;
+        }
     }
 
     & q:after {
@@ -344,45 +351,28 @@ q {
 }
 
 
-.quote {
-    @include margin(50px 20px 50px 20px);
-}
-
-.author {
-    float: right;
-    font : {
-        size: 1em;
-        weight: $light;
-    }
-    color: $light-grey;
-    line-height: 1.4;
-}
-
-
-
 
 /* ARTICLE STYLES */
 article {
+
+    @include margin(60px null);
+
     & p {
         @include margin(null 70px);
     }
-    & .pie p {
-        color: $light-grey;
 
-        font : {
-            family: $proxima_nova_light;
-            size: em(14px);
-            weight: $light;
-        }
-        line-height: 1.4;
+    // Article bottom credits
+    .article-bottom {
+        p.footnote {
+            @extend %footnote;
 
-        &:before {
-            display: block;
-            content: "";
-            height: 1px;
-            width: 100%;
-            background-color: $light-grey;
-            margin-top: 15px;
+            &:before {
+                @include size(300px 1px);
+                @include margin(15px null 12px null);
+                display: block;
+                content: "";
+                background-color: $light-grey;
+            }
         }
     }
 
@@ -391,26 +381,117 @@ article {
 /*Imágenes blog*/
 .image {
     @include padding(20px 0);
-    @include margin(null -30px null -20px);
-    & p {
+    // For mobile!!!
+    // @include margin(null -30px null -20px);
+    margin: 0px;
+
+    img {
+        padding-right: 70px;
+    }
+
+    & p.footnote {
+        @extend %footnote;
+        padding-top: 8px;
         margin: 0px;
-        color: $light-grey;
-        font : {
-            // crear mixin para esto
-            family: $proxima_nova_light;
-            size: em(14px);
-            weight: $light;
-        }
-        line-height: 1.4;
-        padding-left: 20px;
     }
 }
 
 
 
+.grid {
+        padding-left: 20px;
+        padding-right: 10px;
+    }
 
 
 
+
+/* Footer */
+footer {
+
+    background-color: $dark-grey;
+
+    .footer {
+        // height: 400px;
+        @include size(null 300px);
+        // @include padding(140px 80px);
+    }
+
+    p.footerInfo {
+        color: $grey;
+        font: {
+            size: em(12px);
+            family: $proxima_nova_light;
+        }
+        text-align: center;
+    }
+
+    .preFooter {
+        @include size(null 200px);
+        // background-color: $grey;
+
+        ul {
+            @include center;
+            padding-top: 85px;
+            li {
+                color: $near-white;
+
+                font : {
+                    family: $proxima_nova_light;
+                    size: em(16px);
+                    weight: $light;
+                }
+
+                line-height: $golden;
+                text-transform: uppercase;
+                letter-spacing: $spacing;
+                float: left;
+
+                padding-right: 80px;
+                &:last-child {
+                    padding-right: 0px;
+                }
+
+                a {
+                    color: $near-white;
+                }
+                a:hover {
+                    color: $light-grey;
+                }
+            }
+        }
+    }
+
+    .logoFooter {
+        @include size(120px);
+        font-size: em(120px);
+        color: $light-grey;
+        @include center;
+        margin-bottom: 50px;
+    }
+
+    .logoFooter:hover {
+        color: #FFFFFF;
+    }
+
+}
+
+// .footer {
+//     height: 400px;
+//     padding: 140px 80px;
+// }
+
+// p.footerInfo {
+//     color: #464646;
+//     text-align: center;
+//     font-size: 14px;
+//     padding-top: 85px;
+// }
+
+// .preFooter {
+//     height: 200px;
+//     background-color: #464646;
+// }
 
 
 
