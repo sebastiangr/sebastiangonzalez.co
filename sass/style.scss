@@ -228,7 +228,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include title($blog-title...);
+    @include title($h1-title...);
+    text-align: center;
+    &.blog-title {
+        @include title($blog-title...);
+    }
+}
+
+h2 {
+    @include title($h2-title...);
+    text-align: center;
+}
+
+h3 {
+    @include title($h3-title...);
+    text-align: center;
+}
+
+h4 {
+    @include title($h4-title...);
+    text-align: center;
+}
+
+h5 {
+    @include title($h5-title...);
+    text-align: center;
+}
+
+h6 {
+    @include title($h6-title...);
     text-align: center;
 }
 
@@ -365,11 +393,21 @@ article {
 
     & p, h2 {
         @include margin(null 70px);
+
+        @include mobile {
+            @include margin(null 30px);
+        }
+
+        @include tablet {
+            @include margin(null 40px);
+        }
+
     }
 
     & h2 {
         @include title($entry-title...);
         padding-bottom: 12px;
+        text-align: left;
     }
 
     // Article bottom credits
@@ -382,11 +420,42 @@ article {
                 @include margin(15px null 12px null);
                 display: block;
                 content: "";
-                background-color: $light-grey;
+                background-color: $very-light-grey;
             }
         }
     }
 
+    .grid {
+        @include mobile {
+            @include padding(0);
+        }
+        @include tablet {
+            @include padding(0);
+        }
+    }
+    .col-1-1 {
+        @include mobile {
+            padding-right: 0;
+        }
+        @include tablet {
+            padding-right: 0;
+        }
+    }
+
+}
+
+/* TITLE SECTION */
+.title-section {
+
+    @include size(auto 100px);
+    border-bottom: 2px solid $very-light-grey;
+    padding-top: 20px;
+    margin-bottom: 20px;
+
+    h2 {
+        color: $grey;
+        text-align: left;
+    }
 }
 
 
@@ -478,6 +547,10 @@ section#suscribe {
     }
 }
 
+/* COMMENTS BLOCK */
+section#comments {
+
+}
 
 
 /* FOOTER */

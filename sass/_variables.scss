@@ -20,7 +20,7 @@ $body-line: 1em;
 $spacing: 0.05em;
 
 // Sizes
-$body-size: 18px;
+$body-size: 16px;
 $footer-size: 1em/2;
 
 // Colors
@@ -30,19 +30,75 @@ $white: #ffffff;
 $dark-grey: #2d2d2d;
 $grey: #464646;
 $light-grey: #a0a0a0;
+$very-light-grey: #e0e0e0;
 $near-white: #f5f5f5;
 $dark-red: #bf3643;
 $red: #d8444b;
 $light-red: #e7595b;
 $alt-red: #F46969;
 
+// Screen sizes
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+$big-width: 1140px;
+
+
 
 // Titles
 $blog-title: (
     'font': $proxima-nova-sb,
     'weight': $regular,
-    'size': em(60px,18px),
-    'color': $black,
+    'size': 3.375em,
+    'color': $dark-grey,
+    'up': true
+);
+
+$h1-title: (
+    'font': $proxima-nova-sb,
+    'weight': $regular,
+    'size': 3.375em,
+    'color': $dark-grey,
+    'up': true
+);
+
+$h2-title: (
+    'font': $proxima-nova-sb,
+    'weight': $regular,
+    'size': 2.25em,
+    'color': $dark-grey,
+    'up': true
+);
+
+$h3-title: (
+    'font': $proxima-nova-sb,
+    'weight': $regular,
+    'size': 1.5em,
+    'color': $dark-grey,
+    'up': true
+);
+
+$h4-title: (
+    'font': $proxima-nova-sb,
+    'weight': $regular,
+    'size': 1em,
+    'color': $dark-grey,
+    'up': true
+);
+
+$h5-title: (
+    'font': $proxima-nova-sb,
+    'weight': $regular,
+    'size': 0.667em,
+    'color': $dark-grey,
+    'up': true
+);
+
+$h6-title: (
+    'font': $proxima-nova-sb,
+    'weight': $regular,
+    'size': 0.444em,
+    'color': $dark-grey,
     'up': true
 );
 
@@ -50,7 +106,7 @@ $entry-title: (
     'font': $noto-serif,
     'weight': $bold,
     'size': em(32px,18px),
-    'color': $black,
+    'color': $dark-grey,
     'up': false
 );
 

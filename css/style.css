@@ -265,8 +265,72 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  color: #000000;
-  font-size: 3.33333em;
+  color: #2d2d2d;
+  font-size: 3.375em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+h1.blog-title {
+  color: #2d2d2d;
+  font-size: 3.375em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  color: #2d2d2d;
+  font-size: 2.25em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+h3 {
+  color: #2d2d2d;
+  font-size: 1.5em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+h4 {
+  color: #2d2d2d;
+  font-size: 1em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+h5 {
+  color: #2d2d2d;
+  font-size: 0.667em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+h6 {
+  color: #2d2d2d;
+  font-size: 0.444em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
   text-transform: uppercase;
@@ -315,7 +379,7 @@ fieldset {
   box-sizing: border-box;
   outline: none;
   font-family: "proxima_nova_light";
-  font-size: 18px;
+  font-size: 16px;
   color: #2d2d2d;
   vertical-align: top;
   display: block;
@@ -324,7 +388,7 @@ fieldset {
 
 datalist {
   font-family: "proxima_nova_light";
-  font-size: 18px;
+  font-size: 16px;
 }
 
 label {
@@ -570,14 +634,28 @@ article p, article h2 {
   margin-right: 70px;
   margin-left: 70px;
 }
+@media (max-width: 767px) {
+  article p, article h2 {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  article p, article h2 {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+}
 article h2 {
-  color: #000000;
+  color: #2d2d2d;
   font-size: 1.77778em;
   font-family: "Noto Serif";
   font-weight: 700;
+  text-transform: none;
   line-height: 1.5;
   letter-spacing: 0.05em;
   padding-bottom: 12px;
+  text-align: left;
 }
 article .article-bottom p.footnote:before {
   height: 1px;
@@ -586,7 +664,40 @@ article .article-bottom p.footnote:before {
   margin-bottom: 12px;
   display: block;
   content: "";
-  background-color: #a0a0a0;
+  background-color: #e0e0e0;
+}
+@media (max-width: 767px) {
+  article .grid {
+    padding: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  article .grid {
+    padding: 0;
+  }
+}
+@media (max-width: 767px) {
+  article .col-1-1 {
+    padding-right: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  article .col-1-1 {
+    padding-right: 0;
+  }
+}
+
+/* TITLE SECTION */
+.title-section {
+  height: 100px;
+  width: auto;
+  border-bottom: 2px solid #e0e0e0;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.title-section h2 {
+  color: #464646;
+  text-align: left;
 }
 
 /*BLOG IMAGES*/
@@ -642,6 +753,7 @@ section#suscribe form#suscribe-form h2 {
   font-size: 1.44444em;
   font-family: "proxima_nova_light";
   font-weight: 300;
+  text-transform: none;
   line-height: 1.5;
   letter-spacing: 0.05em;
   text-align: center;
@@ -657,6 +769,7 @@ section#suscribe form#suscribe-form button {
   max-width: 100%;
 }
 
+/* COMMENTS BLOCK */
 /* FOOTER */
 footer {
   background-color: #2d2d2d;
