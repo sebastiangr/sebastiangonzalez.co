@@ -634,13 +634,13 @@ article p, article h2 {
   margin-right: 70px;
   margin-left: 70px;
 }
-@media (max-width: 767px) {
+@media only screen and (min-width: 48em) {
   article p, article h2 {
     margin-right: 30px;
     margin-left: 30px;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 62em) {
   article p, article h2 {
     margin-right: 40px;
     margin-left: 40px;
@@ -666,22 +666,22 @@ article .article-bottom p.footnote:before {
   content: "";
   background-color: #e0e0e0;
 }
-@media (max-width: 767px) {
+@media only screen and (min-width: 48em) {
   article .grid {
     padding: 0;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 62em) {
   article .grid {
     padding: 0;
   }
 }
-@media (max-width: 767px) {
+@media only screen and (min-width: 48em) {
   article .col-1-1 {
     padding-right: 0;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 62em) {
   article .col-1-1 {
     padding-right: 0;
   }
@@ -708,7 +708,7 @@ article .article-bottom p.footnote:before {
 .image img {
   padding-right: 70px;
 }
-@media (max-width: 767px) {
+@media only screen and (min-width: 48em) {
   .image img {
     padding-right: 0px;
     border: 0;
@@ -717,7 +717,7 @@ article .article-bottom p.footnote:before {
     -ms-interpolation-mode: bicubic;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 62em) {
   .image img {
     padding-right: 0px;
     border: 0;
@@ -738,12 +738,12 @@ section#suscribe {
 section#suscribe form#suscribe-form {
   padding: 65px 170px;
 }
-@media (max-width: 767px) {
+@media only screen and (min-width: 48em) {
   section#suscribe form#suscribe-form {
     padding: 65px 20px;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 62em) {
   section#suscribe form#suscribe-form {
     padding: 65px 60px;
   }
@@ -857,5 +857,4 @@ footer .logoFooter:hover {
   display: table;
   margin: 0 auto;
 }
-
 /*# sourceMappingURL=style.css.map */

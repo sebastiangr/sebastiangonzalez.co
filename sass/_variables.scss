@@ -38,12 +38,15 @@ $light-red: #e7595b;
 $alt-red: #F46969;
 
 // Screen sizes
-$mobile-width: 480px;
-$tablet-width: 768px;
-$desktop-width: 992px;
-$big-width: 1140px;
+$small-width: 30em; // 480px
+$mobile-width: 48em; // 768px
+$tablet-width: 62em; // 992px
+$desktop-width: 75em; // 1200px
 
-
+$small-margin: 1.563em; // 25px
+$mobile-margin: 2.875em; // 46px
+$tablet-margin: 6.875em; // 110px
+$desktop-margin: 5.625em; // 90px
 
 // Titles
 $blog-title: (

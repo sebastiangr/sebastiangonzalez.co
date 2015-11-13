@@ -1,0 +1,218 @@
+@font-face {
+  font-family: 'proxima_nova_semibold';
+  src: url("../fonts/Proxima-Nova-Semibold.eot");
+  src: url("../fonts/Proxima-Nova-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/Proxima-Nova-Semibold.woff2") format("woff2"), url("../fonts/Proxima-Nova-Semibold.woff") format("woff"), url("../fonts/Proxima-Nova-Semibold.ttf") format("truetype"), url("../fonts/Proxima-Nova-Semibold.svg#proxima_nova_semibold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'proxima_nova_light';
+  src: url("../fonts/Proxima-Nova-Light.eot");
+  src: url("../fonts/Proxima-Nova-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Proxima-Nova-Light.woff2") format("woff2"), url("../fonts/Proxima-Nova-Light.woff") format("woff"), url("../fonts/Proxima-Nova-Light.ttf") format("truetype"), url("../fonts/Proxima-Nova-Light.svg#proxima_nova_light") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* -------------------------------------------------- */
+/*  1 - RESET
+/* -------------------------------------------------- */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a, a > * {
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 400ms;
+          transition: 400ms;
+  outline: none;
+  text-decoration: none;
+  background: transparent;
+  vertical-align: baseline;
+  color: #d8444b;
+}
+a:hover, a > *:hover {
+  color: #a0a0a0;
+}
+
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+ul {
+  list-style: none outside;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* -------------------------------------------------- */
+/*  2 - BODY BASIC
+/* -------------------------------------------------- */
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #ffffff;
+  color: #2d2d2d;
+  font-family: "Noto Serif";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-selection {
+  background-color: #e7595b;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background-color: #e7595b;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: #e7595b;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+* {
+  background: rgba(150, 150, 150, 0.2) !important;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.wrap {
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container, .container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-fluid {
+  padding-right: 1.563em;
+  padding-left: 1.563em;
+}
+@media only screen and (min-width: 48em) {
+  .container-fluid {
+    padding-right: 2.875em;
+    padding-left: 2.875em;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .container-fluid {
+    padding-right: 6.875em;
+    padding-left: 6.875em;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .container-fluid {
+    padding-right: 5.625em;
+    padding-left: 5.625em;
+  }
+}
+
+/* FOOTNOTE STYLES GENERATOR */
+.image p.footnote {
+  color: #a0a0a0;
+  font-size: 0.75em;
+  font-family: "proxima_nova_light";
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+/*BLOG IMAGES*/
+.image {
+  padding: 20px 0;
+  margin-right: -1.563em;
+  margin-left: -1.563em;
+}
+@media only screen and (min-width: 48em) {
+  .image {
+    margin-right: -2.875em;
+    margin-left: -2.875em;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .image {
+    margin-right: -6.875em;
+    margin-left: -6.875em;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .image {
+    margin-left: -5.625em;
+    margin-right: 0;
+  }
+}
+.image p.footnote {
+  padding-top: 8px;
+  margin-left: 25px;
+}
+@media only screen and (min-width: 48em) {
+  .image p.footnote {
+    margin-left: 46px;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .image p.footnote {
+    margin-left: 0;
+  }
+}
+
+/*# sourceMappingURL=alternative.css.map */

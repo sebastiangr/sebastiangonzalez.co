@@ -1,0 +1,251 @@
+@import "bourbon/bourbon";
+@import "variables.scss";
+@import "functions.scss";
+@import "mixins.scss";
+
+// Fuentes
+ @font-face {
+    font-family: 'proxima_nova_semibold';
+    src: url('../fonts/Proxima-Nova-Semibold.eot');
+    src: url('../fonts/Proxima-Nova-Semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Proxima-Nova-Semibold.woff2') format('woff2'),
+         url('../fonts/Proxima-Nova-Semibold.woff') format('woff'),
+         url('../fonts/Proxima-Nova-Semibold.ttf') format('truetype'),
+         url('../fonts/Proxima-Nova-Semibold.svg#proxima_nova_semibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+ @font-face {
+    font-family: 'proxima_nova_light';
+    src: url('../fonts/Proxima-Nova-Light.eot');
+    src: url('../fonts/Proxima-Nova-Light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Proxima-Nova-Light.woff2') format('woff2'),
+         url('../fonts/Proxima-Nova-Light.woff') format('woff'),
+         url('../fonts/Proxima-Nova-Light.ttf') format('truetype'),
+         url('../fonts/Proxima-Nova-Light.svg#proxima_nova_light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* -------------------------------------------------- */
+/*  1 - RESET
+/* -------------------------------------------------- */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    @include body-reset;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { display: block; }
+
+*, *:after, *:before {
+    @include reset;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+a, a > * {
+    @include reset;
+    @include speed-normal;
+    outline: none;
+    text-decoration: none;
+    background: transparent;
+    vertical-align: baseline;
+    color: $red;
+    &:hover {
+        color: $light-grey;
+    }
+}
+
+nav ul, nav ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+ul { list-style: none outside; }
+
+ol { list-style-position: inside; }
+
+
+img {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    -ms-interpolation-mode: bicubic;
+}
+
+
+/* -------------------------------------------------- */
+/*  2 - BODY BASIC
+/* -------------------------------------------------- */
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: $white;
+    color: $dark-grey;
+    font: {
+        family: $noto-serif;
+        size: $body-size;
+        weight: $regular;
+    }
+    line-height: $body-line;
+    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+    -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-selection {
+    background-color: $light-red;
+    color: $white;
+    text-shadow: none;
+}
+
+::selection {
+    background-color: $light-red;
+    color: $white;
+    text-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+* {
+    background: rgba(150,150,150,0.2) !important;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+
+
+
+.wrap {
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container, .container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-fluid {
+    // padding-right: 1.563em;
+    // padding-left: 1.563em;
+    @include padding(null $small-margin);
+
+    @include mobile {
+        @include padding(null $mobile-margin);
+    }
+    @include tablet {
+        @include padding(null $tablet-margin);
+    }
+    @include desktop {
+        @include padding(null $desktop-margin);
+    }
+
+    // @include small-mobile {
+    //     @include padding(null 2.875em);
+    // }
+    // @include mobile {
+    //     @include padding(null 6.875em);
+    // }
+    // @include tablet {
+    //     @include padding(null 5.625em);
+    // }
+
+
+}
+
+
+
+/* FOOTNOTE STYLES GENERATOR */
+%footnote {
+    color: $light-grey;
+    font: {
+        size: em(12px);
+        family: $proxima-nova-light;
+        weight: $light;
+    }
+    line-height: $golden;
+    letter-spacing: $spacing;
+}
+
+
+
+/*BLOG IMAGES*/
+.image {
+    // @include padding(20px 0);
+    // For mobile!!!
+    // @include margin(null -30px null -20px);
+    // margin: 0px;
+
+    padding: 20px 0;
+    @include margin(null -1.563em);
+    // margin-left: -1.563em;
+    // margin-right: -1.563em;
+
+    @include mobile {
+        @include margin(null -2.875em);
+    }
+    @include tablet {
+        @include margin(null -6.875em);
+    }
+    @include desktop {
+        margin-left: -5.625em;
+        margin-right: 0;
+    }
+
+
+
+    img {
+        // padding-right: 70px;
+
+    }
+
+    & p.footnote {
+        @extend %footnote;
+        padding-top: 8px;
+        margin-left: 25px;
+
+        @include mobile {
+            margin-left: 46px;
+        }
+        @include desktop {
+            margin-left: 0;
+        }
+
+    }
+}
