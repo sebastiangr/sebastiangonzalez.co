@@ -82,6 +82,15 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
+.no-padding-r {
+  padding-right: 1rem;
+}
+@media only screen and (min-width: 48em) {
+  .no-padding-r {
+    padding-right: 0px;
+  }
+}
+
 /* -------------------------------------------------- */
 /*  2 - BODY BASIC
 /* -------------------------------------------------- */
@@ -91,9 +100,9 @@ html {
 
 body {
   background-color: #ffffff;
-  color: #2d2d2d;
+  color: #242424;
   font-family: "Noto Serif";
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 400;
   line-height: 1em;
   -webkit-font-smoothing: antialiased;
@@ -119,10 +128,6 @@ body {
   text-shadow: none;
 }
 
-* {
-  background: rgba(150, 150, 150, 0.2) !important;
-}
-
 html, body {
   margin: 0;
   padding: 0;
@@ -134,7 +139,7 @@ html, body {
 
 .wrap {
   box-sizing: border-box;
-  max-width: 1200px;
+  max-width: 71.25em;
   margin: 0 auto;
 }
 
@@ -159,21 +164,350 @@ html, body {
     padding-left: 6.875em;
   }
 }
-@media only screen and (min-width: 75em) {
+@media only screen and (min-width: 71.25em) {
   .container-fluid {
     padding-right: 5.625em;
     padding-left: 5.625em;
   }
 }
 
+/* -------------------------------------------------- */
+/*  2.4 - FORMS
+/* -------------------------------------------------- */
+/* FormHack v1.1.0 (formhack.io) */
+/* Global Reset Styles ------------------ */
+input,
+textarea,
+select,
+option,
+optgroup,
+button,
+legend,
+fieldset {
+  box-sizing: border-box;
+  outline: none;
+  font-family: "proxima_nova_light";
+  font-size: 1em;
+  color: #242424;
+  vertical-align: top;
+  display: block;
+  margin: 10px 0;
+}
+
+datalist {
+  font-family: "proxima_nova_light";
+  font-size: 1em;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+/* Input & Textarea ------------------ */
+/* Fields with standard width */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  padding-left: 20px;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  border: 0px solid #242424;
+  -webkit-transition: 400ms;
+          transition: 400ms;
+}
+
+/* Fields with standard height */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list] {
+  height: 50px;
+  -webkit-appearance: none;
+}
+
+/* Other */
+textarea {
+  -webkit-appearance: none;
+  overflow: auto;
+}
+
+input[type="range"] {
+  height: 50px;
+  width: 100%;
+  max-width: 400px;
+}
+
+input[type="file"] {
+  min-height: 50px;
+}
+
+input[type="search"] {
+  height: 50px;
+  -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Select ------------------ */
+select {
+  height: 50px;
+}
+
+select[multiple] {
+  height: auto;
+  min-height: 50px;
+  padding: 0;
+}
+select[multiple] option {
+  margin: 0;
+  padding: 10px;
+}
+
+/* Fieldset ------------------ */
+fieldset {
+  padding: 10px 25px;
+  border-radius: 3px;
+  border: 0px solid #242424;
+}
+
+legend {
+  padding: 0 5px;
+  font-weight: 700;
+}
+
+/* Buttons, Input Type Submit/Reset ------------------ */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="image"] {
+  height: 50px;
+  width: 100%;
+  max-width: 200px;
+  background-color: #d8444b;
+  padding: 10px;
+  cursor: pointer;
+  color: #f5f5f5;
+  font-weight: 400;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 3px;
+  border: 0px solid #242424;
+  -webkit-transition: 800ms;
+          transition: 800ms;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+input[type="image"] {
+  text-align: center;
+  padding: 10px;
+}
+
+/* States ------------------ */
+input[disabled],
+textarea[disabled],
+select[disabled],
+option[disabled],
+button[disabled] {
+  cursor: not-allowed;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+option:focus,
+button:focus {
+  background-color: rgba(160, 160, 160, 0.8);
+  border-color: #242424;
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: #242424 solid 2px;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus {
+  background-color: #bf3643;
+  color: #f5f5f5;
+}
+
+/* -------------------------------------------------- */
+/*  2.5 - CONTENT BLOG
+/* -------------------------------------------------- */
 /* FOOTNOTE STYLES GENERATOR */
-.image p.footnote {
+article .article-bottom p.footnote, .quote.important .author, .image p.footnote, section#suscribe form#suscribe-form p {
   color: #a0a0a0;
   font-size: 0.75em;
   font-family: "proxima_nova_light";
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: 0.05em;
+}
+
+/* ARTICLE BLOCK STYLES */
+article {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+article h2 {
+  color: #242424;
+  font-size: 1.77778em;
+  font-family: "Noto Serif";
+  font-weight: 700;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  padding-bottom: 12px;
+  text-align: left;
+}
+article .article-bottom p.footnote:before {
+  height: 1px;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 12px;
+  display: block;
+  content: "";
+  background-color: #e0e0e0;
+}
+@media only screen and (min-width: 71.25em) {
+  article .article-bottom p.footnote:before {
+    height: 1px;
+    width: 30%;
+  }
+}
+
+/* QUOTATIONS */
+.quote {
+  margin: 40px 20px;
+}
+@media only screen and (min-width: 48em) {
+  .quote {
+    margin: 40px 0 40px 72px;
+  }
+}
+@media only screen and (min-width: 71.25em) {
+  .quote {
+    margin: 40px 80px;
+  }
+}
+.quote q {
+  display: inline;
+  color: #464646;
+  font-size: 1.22222em;
+  font-family: "Noto Serif";
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+.quote q:before {
+  content: open-quote;
+}
+.quote q:after {
+  content: close-quote;
+}
+.quote.important {
+  margin: 90px 20px 70px;
+}
+@media only screen and (min-width: 48em) {
+  .quote.important {
+    margin: 50px 0 70px 72px;
+  }
+}
+@media only screen and (min-width: 71.25em) {
+  .quote.important {
+    margin: 50px 80px 70px 140px;
+  }
+}
+.quote.important q:before {
+  content: "''";
+  position: absolute;
+  color: #d8444b;
+  font-family: "Noto Serif";
+  font-size: 6.875em;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 135px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: -80px;
+}
+@media only screen and (min-width: 48em) {
+  .quote.important q:before {
+    left: initial;
+    line-height: 80px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: -1px;
+    margin-left: -75px;
+  }
+}
+.quote.important .author {
+  float: right;
+}
+.quote q:after {
+  content: "''";
+}
+
+/* TITLE SECTION */
+.title-section {
+  height: 100px;
+  width: auto;
+  border-bottom: 2px solid #e0e0e0;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.title-section h2 {
+  color: #464646;
+  text-align: left;
 }
 
 /*BLOG IMAGES*/
@@ -194,7 +528,7 @@ html, body {
     margin-left: -6.875em;
   }
 }
-@media only screen and (min-width: 75em) {
+@media only screen and (min-width: 71.25em) {
   .image {
     margin-left: -5.625em;
     margin-right: 0;
@@ -206,13 +540,123 @@ html, body {
 }
 @media only screen and (min-width: 48em) {
   .image p.footnote {
-    margin-left: 46px;
+    margin-left: 30px;
   }
 }
-@media only screen and (min-width: 75em) {
+@media only screen and (min-width: 71.25em) {
   .image p.footnote {
     margin-left: 0;
   }
 }
 
+/* SUSCRIBE BLOCK */
+section#suscribe {
+  background-color: #242424;
+}
+section#suscribe form#suscribe-form {
+  padding: 62px 0;
+}
+@media only screen and (min-width: 30em) {
+  section#suscribe form#suscribe-form {
+    padding: 62px;
+  }
+}
+@media only screen and (min-width: 71.25em) {
+  section#suscribe form#suscribe-form {
+    padding: 62px 110px;
+  }
+}
+section#suscribe form#suscribe-form h2 {
+  color: #ffffff;
+  font-size: 1.44444em;
+  font-family: "proxima_nova_light";
+  font-weight: 300;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+section#suscribe form#suscribe-form p {
+  text-align: center;
+  padding-top: 10px;
+}
+section#suscribe form#suscribe-form input {
+  max-width: 100%;
+}
+section#suscribe form#suscribe-form button {
+  max-width: 100%;
+}
+
+/* COMMENTS BLOCK */
+/* FOOTER */
+footer {
+  background-color: #242424;
+}
+footer p.footerInfo {
+  color: #464646;
+  font-size: 0.75em;
+  font-family: "proxima_nova_light";
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 35px;
+}
+footer .preFooter {
+  height: auto;
+}
+@media only screen and (min-width: 48em) {
+  footer .preFooter {
+    height: 200px;
+  }
+}
+footer .preFooter ul {
+  display: table;
+  margin: 0 auto;
+  padding-top: 62px;
+}
+footer .preFooter ul li {
+  color: #f5f5f5;
+  font-family: "proxima_nova_light";
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  float: none;
+  padding-right: 0;
+  padding-bottom: 46px;
+}
+@media only screen and (min-width: 48em) {
+  footer .preFooter ul li {
+    float: left;
+    padding-right: 40px;
+    padding-bottom: 0;
+  }
+}
+@media only screen and (min-width: 62em) {
+  footer .preFooter ul li {
+    padding-right: 80px;
+  }
+}
+footer .preFooter ul li:last-child {
+  padding-right: 0px;
+}
+footer .preFooter ul li a {
+  color: #f5f5f5;
+  padding: 20px;
+}
+footer .preFooter ul li a:hover {
+  color: #a0a0a0;
+}
+footer .logoFooter {
+  height: 120px;
+  width: 120px;
+  font-size: 7.5em;
+  color: #a0a0a0;
+  display: table;
+  margin: 0 auto;
+}
+footer .logoFooter:hover {
+  color: #FFFFFF;
+}
 /*# sourceMappingURL=alternative.css.map */

@@ -17,7 +17,7 @@
 
 }
 
- @font-face {
+@font-face {
     font-family: 'proxima_nova_light';
     src: url('../fonts/Proxima-Nova-Light.eot');
     src: url('../fonts/Proxima-Nova-Light.eot?#iefix') format('embedded-opentype'),
@@ -90,6 +90,25 @@ img {
     -ms-interpolation-mode: bicubic;
 }
 
+.no-padding-r {
+    padding-right: 1rem;
+
+    @include mobile {
+        padding-right: 0px;
+    }
+}
+
+// .no-padding-l {
+//     padding-left: 0px;
+// }
+
+// @include small-mobile {
+//     .no-padding-r, .no-padding-l {
+//         padding-left: 0px;
+//         padding-right: 0px;
+//     }
+// }
+
 
 /* -------------------------------------------------- */
 /*  2 - BODY BASIC
@@ -133,9 +152,9 @@ body {
 
 
 
-* {
-    background: rgba(150,150,150,0.2) !important;
-}
+// * {
+//     background: rgba(150,150,150,0.2) !important;
+// }
 
 
 html, body {
@@ -152,7 +171,7 @@ html, body {
 
 .wrap {
     box-sizing: border-box;
-    max-width: 1200px;
+    max-width: $desktop-width;
     margin: 0 auto;
 }
 
@@ -191,6 +210,18 @@ html, body {
 
 
 
+/* -------------------------------------------------- */
+/*  2.4 - FORMS
+/* -------------------------------------------------- */
+
+@import "formhack.scss";
+
+
+
+/* -------------------------------------------------- */
+/*  2.5 - CONTENT BLOG
+/* -------------------------------------------------- */
+
 /* FOOTNOTE STYLES GENERATOR */
 %footnote {
     color: $light-grey;
@@ -203,19 +234,134 @@ html, body {
     letter-spacing: $spacing;
 }
 
+/* ARTICLE BLOCK STYLES */
+article {
+    @include padding(60px null );
 
+    & p, h2 {
+
+    }
+
+    & h2 {
+        @include title($entry-title...);
+        padding-bottom: 12px;
+        text-align: left;
+    }
+
+    .article-bottom {
+        p.footnote {
+            @extend %footnote;
+
+            &:before {
+                @include size(100% 1px);
+
+                @include desktop {
+                    @include size(30% 1px);
+                }
+
+                @include margin(15px null 12px null);
+                display: block;
+                content: "";
+                background-color: $very-light-grey;
+            }
+        }
+    }
+}
+
+/* QUOTATIONS */
+.quote {
+
+    @include margin(40px 20px);
+
+    @include mobile {
+        @include margin(40px 0 40px 72px);
+    }
+    @include desktop {
+        @include margin(40px 80px);
+    }
+
+    // Simple quote
+    q {
+        @include quote;
+
+        &:before {
+            content: open-quote;
+        }
+        &:after {
+            content: close-quote;
+        }
+    }
+
+    // Important quote - with Big ''
+    &.important {
+
+        @include margin(90px 20px 70px 20px); //Plus q:before height
+
+        @include mobile {
+            @include margin(50px 0 70px 72px);
+        }
+        @include desktop {
+            @include margin(50px 80px 70px 140px);
+        }
+
+        & q:before {
+            content: "''";
+            position: absolute;
+            color: $red;
+
+            font: {
+                family: $noto-serif;
+                size: em(110px);
+                weight: $regular;
+                style: italic;
+            }
+
+            line-height: 135px;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            left: 50%;
+            margin-left: -40px;
+            margin-top: -80px;
+
+            @include mobile {
+                left: initial;
+                line-height: 80px;
+                padding-right: 10px;
+                @include margin(10px null -1px -75px);
+            }
+        }
+
+        .author {
+            @extend %footnote;
+            float: right;
+        }
+    }
+
+    & q:after {
+        content: "''";
+    }
+}
+
+/* TITLE SECTION */
+.title-section {
+
+    @include size(auto 100px);
+    border-bottom: 2px solid $very-light-grey;
+    padding-top: 20px;
+    margin-bottom: 20px;
+
+    h2 {
+        color: $grey;
+        text-align: left;
+    }
+}
 
 /*BLOG IMAGES*/
 .image {
-    // @include padding(20px 0);
-    // For mobile!!!
-    // @include margin(null -30px null -20px);
-    // margin: 0px;
 
     padding: 20px 0;
     @include margin(null -1.563em);
-    // margin-left: -1.563em;
-    // margin-right: -1.563em;
 
     @include mobile {
         @include margin(null -2.875em);
@@ -228,10 +374,7 @@ html, body {
         margin-right: 0;
     }
 
-
-
     img {
-        // padding-right: 70px;
 
     }
 
@@ -241,11 +384,135 @@ html, body {
         margin-left: 25px;
 
         @include mobile {
-            margin-left: 46px;
+            margin-left: 30px;
         }
         @include desktop {
             margin-left: 0;
         }
 
+    }
+}
+
+/* SUSCRIBE BLOCK */
+section#suscribe {
+    background-color: $dark-grey;
+
+    form#suscribe-form {
+        @include padding(62px 0);
+
+        @include smallmobile {
+            @include padding(62px 62px);
+        }
+
+        @include desktop {
+            @include padding(62px 110px);
+        }
+
+
+        h2 {
+            @include title($suscribe-title...);
+            text-align: center;
+        }
+        p {
+            @extend %footnote;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        input {
+            max-width: 100%;
+        }
+        button {
+            max-width: 100%;
+        }
+    }
+}
+
+
+/* COMMENTS BLOCK */
+section#comments {
+
+}
+
+
+/* FOOTER */
+footer {
+
+    background-color: $dark-grey;
+
+    .footer {
+        // @include size(null 300px);
+    }
+
+    p.footerInfo {
+        color: $grey;
+        font: {
+            size: em(12px);
+            family: $proxima_nova_light;
+        }
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 35px;
+    }
+
+    .preFooter {
+
+        @include size(null auto);
+
+        @include mobile {
+            @include size(null 200px);
+        }
+
+        ul {
+            @include center;
+            padding-top: 62px;
+
+            li {
+                color: $near-white;
+                font : {
+                    family: $proxima_nova_light;
+                    size: em(16px);
+                    weight: $light;
+                }
+                line-height: $golden;
+                text-transform: uppercase;
+                letter-spacing: $spacing;
+                text-align: center;
+                float: none;
+                padding-right: 0;
+                padding-bottom: 46px;
+
+                @include mobile {
+                    float: left;
+                    padding-right: 40px;
+                    padding-bottom: 0;
+                }
+                @include tablet {
+                    padding-right: 80px;
+                }
+
+                &:last-child {
+                    padding-right: 0px;
+                }
+
+                a {
+                    color: $near-white;
+                    padding: 20px;
+                }
+                a:hover {
+                    color: $light-grey;
+                }
+            }
+        }
+    }
+
+    .logoFooter {
+        @include size(120px);
+        font-size: em(120px);
+        color: $light-grey;
+        @include center;
+    }
+    .logoFooter:hover {
+        color: #FFFFFF;
     }
 }

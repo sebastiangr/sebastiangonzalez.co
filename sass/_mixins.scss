@@ -80,7 +80,7 @@
 // Media queries
 
 // Tamaños menores a 480px
-@mixin small-mobile {
+@mixin smallmobile {
     @media only screen and (min-width: #{$small-width}) {
         @content;
     }

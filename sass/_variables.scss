@@ -20,14 +20,15 @@ $body-line: 1em;
 $spacing: 0.05em;
 
 // Sizes
-$body-size: 16px;
+$body-size: em(16px);
 $footer-size: 1em/2;
 
 // Colors
 $black: #000000;
 $white: #ffffff;
 
-$dark-grey: #2d2d2d;
+// $dark-grey: #2d2d2d;
+$dark-grey: #242424;
 $grey: #464646;
 $light-grey: #a0a0a0;
 $very-light-grey: #e0e0e0;
@@ -41,7 +42,8 @@ $alt-red: #F46969;
 $small-width: 30em; // 480px
 $mobile-width: 48em; // 768px
 $tablet-width: 62em; // 992px
-$desktop-width: 75em; // 1200px
+// $desktop-width: 75em; // 1200px
+$desktop-width: 71.250em; // 1140px
 
 $small-margin: 1.563em; // 25px
 $mobile-margin: 2.875em; // 46px

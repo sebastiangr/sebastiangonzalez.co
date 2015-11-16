@@ -29,11 +29,11 @@
 }
 
 .dark-grey {
-  color: #2d2d2d;
+  color: #242424;
 }
 
 .dark-grey-bg {
-  background-color: #2d2d2d;
+  background-color: #242424;
 }
 
 .grey {
@@ -156,7 +156,7 @@ html {
 
 body {
   background-color: #ffffff;
-  color: #2d2d2d;
+  color: #242424;
   font-family: "Noto Serif";
   font-size: 1.125em;
   font-weight: 400;
@@ -265,7 +265,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  color: #2d2d2d;
+  color: #242424;
   font-size: 3.375em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
@@ -275,7 +275,7 @@ h1 {
   text-align: center;
 }
 h1.blog-title {
-  color: #2d2d2d;
+  color: #242424;
   font-size: 3.375em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
@@ -285,7 +285,7 @@ h1.blog-title {
 }
 
 h2 {
-  color: #2d2d2d;
+  color: #242424;
   font-size: 2.25em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
@@ -296,7 +296,7 @@ h2 {
 }
 
 h3 {
-  color: #2d2d2d;
+  color: #242424;
   font-size: 1.5em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
@@ -307,7 +307,7 @@ h3 {
 }
 
 h4 {
-  color: #2d2d2d;
+  color: #242424;
   font-size: 1em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
@@ -318,7 +318,7 @@ h4 {
 }
 
 h5 {
-  color: #2d2d2d;
+  color: #242424;
   font-size: 0.667em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
@@ -329,7 +329,7 @@ h5 {
 }
 
 h6 {
-  color: #2d2d2d;
+  color: #242424;
   font-size: 0.444em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
@@ -379,8 +379,8 @@ fieldset {
   box-sizing: border-box;
   outline: none;
   font-family: "proxima_nova_light";
-  font-size: 16px;
-  color: #2d2d2d;
+  font-size: 1em;
+  color: #242424;
   vertical-align: top;
   display: block;
   margin: 10px 0;
@@ -388,7 +388,7 @@ fieldset {
 
 datalist {
   font-family: "proxima_nova_light";
-  font-size: 16px;
+  font-size: 1em;
 }
 
 label {
@@ -421,7 +421,7 @@ textarea {
   padding-left: 20px;
   background-color: #f5f5f5;
   border-radius: 3px;
-  border: 0px solid #2d2d2d;
+  border: 0px solid #242424;
   -webkit-transition: 400ms;
           transition: 400ms;
 }
@@ -496,7 +496,7 @@ select[multiple] option {
 fieldset {
   padding: 10px 25px;
   border-radius: 3px;
-  border: 0px solid #2d2d2d;
+  border: 0px solid #242424;
 }
 
 legend {
@@ -521,7 +521,7 @@ input[type="image"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 3px;
-  border: 0px solid #2d2d2d;
+  border: 0px solid #242424;
   -webkit-transition: 800ms;
           transition: 800ms;
   text-transform: uppercase;
@@ -548,12 +548,12 @@ select:focus,
 option:focus,
 button:focus {
   background-color: rgba(160, 160, 160, 0.8);
-  border-color: #2d2d2d;
+  border-color: #242424;
 }
 
 input[type="checkbox"]:focus,
 input[type="radio"]:focus {
-  outline: #2d2d2d solid 2px;
+  outline: #242424 solid 2px;
 }
 
 button:hover,
@@ -647,7 +647,7 @@ article p, article h2 {
   }
 }
 article h2 {
-  color: #2d2d2d;
+  color: #242424;
   font-size: 1.77778em;
   font-family: "Noto Serif";
   font-weight: 700;
@@ -733,7 +733,7 @@ article .article-bottom p.footnote:before {
 
 /* SUSCRIBE BLOCK */
 section#suscribe {
-  background-color: #2d2d2d;
+  background-color: #242424;
 }
 section#suscribe form#suscribe-form {
   padding: 65px 170px;
@@ -772,7 +772,7 @@ section#suscribe form#suscribe-form button {
 /* COMMENTS BLOCK */
 /* FOOTER */
 footer {
-  background-color: #2d2d2d;
+  background-color: #242424;
 }
 footer .footer {
   height: 300px;
@@ -833,7 +833,7 @@ footer .logoFooter:hover {
   margin-right: 20px;
 }
 .box.dark-grey {
-  background-color: #2d2d2d;
+  background-color: #242424;
 }
 .box.grey {
   background-color: #464646;
