@@ -118,11 +118,15 @@ html {
     height: 100%;
 }
 
+html, body {
+    @include body-reset;
+}
+
 body {
     background-color: $white;
     color: $dark-grey;
     font: {
-        family: $noto-serif;
+        family: $proxima-nova-light;
         size: $body-size;
         weight: $regular;
     }
@@ -145,26 +149,9 @@ body {
 
 
 
-
-
-
-
-
-
-
 // * {
 //     background: rgba(150,150,150,0.2) !important;
 // }
-
-
-html, body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-}
 
 
 
@@ -209,6 +196,161 @@ html, body {
 }
 
 
+/* -------------------------------------------------- */
+/*  2.1 - CLEARFIX
+/* -------------------------------------------------- */
+
+.clear {
+    @include clearfix;
+    overflow: hidden;
+    width: 0;
+}
+
+.clearfix:after {
+    @include clearfix;
+    content: ".";
+}
+
+
+/* -------------------------------------------------- */
+/*  2.2 - GENERAL
+/* -------------------------------------------------- */
+
+.align-center { text-align: center; }
+.align-left   { text-align: left;   }
+.align-right  { text-align: right;  }
+.alignleft  { float: left;  }
+.alignright { float: right; }
+
+img.alignleft { margin-right: 20px; }
+img.alignright { margin-left: 20px; }
+
+.aligncenter {
+    @include center;
+}
+
+.hide       { display: none;  }
+.show       { display: block; }
+.invisible  { visibility: hidden; }
+.affix      { position: fixed; }
+
+
+/* -------------------------------------------------- */
+/*  2.3 - TYPOGRAPHY
+/* -------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+
+    font: {
+        family: $proxima_nova_sb;
+    }
+
+    // Títulos con tamaño no apto en móviles, se parten
+    // word-break: break-all;
+    // @include smallmobile {
+    //     word-break: keep-all;
+    // }
+    overflow: hidden;
+    // text-transform: uppercase;
+}
+
+h1 {
+    @include title($h1-title...);
+    margin-top: $h1-margin-top;
+    margin-bottom: $h1-margin-bottom;
+
+    &.blog-title {
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+        @include title($blog-title...);
+
+        @include tablet {
+            font-size: 3.375em;
+            line-height: 1.25em;
+            margin-top: 0px;
+        }
+    }
+}
+
+h2 {
+    @include title($h2-title...);
+    margin-top: $h2-margin-top;
+    margin-bottom: $h2-margin-bottom;
+}
+
+h3 {
+    @include title($h3-title...);
+    margin-top: $h3-margin-top;
+    margin-bottom: $h3-margin-bottom;
+}
+
+h4 {
+    @include title($h4-title...);
+    margin-top: $h4-margin-top;
+    margin-bottom: $h4-margin-bottom;
+}
+
+h5 {
+    @include title($h5-title...);
+}
+
+h6 {
+    @include title($h6-title...);
+}
+
+
+p {
+    font: {
+        family: $noto-serif;
+        size: 1em;
+    }
+
+    @include tablet {
+        font-size: $text-size;
+    }
+
+    margin-top: $text-size;
+
+      // @include tablet {
+      //   font-size: 40px;
+      // }
+
+      // @include desktop {
+      //   font-size: 60px;
+      // }
+
+    text-align: justify;
+    line-height: $golden;
+
+    &.light {
+        font-weight: $light;
+    }
+    &.regular {
+        font-weight: $regular;
+    }
+    &.bold {
+        font-weight: $bold;
+    }
+
+    &.dropcap::first-letter {
+        float: left;
+        font: {
+            // size: 5em;
+            size: em(90px,18px);
+            // size: 90px;
+        }
+        line-height: 70px;
+
+        @include tablet {
+            line-height: 80px;
+        }
+
+
+        color: $red;
+        padding-right: 10px;
+    }
+
+}
+
 
 /* -------------------------------------------------- */
 /*  2.4 - FORMS
@@ -226,17 +368,77 @@ html, body {
 %footnote {
     color: $light-grey;
     font: {
-        size: em(12px);
+        size: em(14px);
         family: $proxima-nova-light;
         weight: $light;
     }
-    line-height: $golden;
+    line-height: 1.25;
     letter-spacing: $spacing;
 }
 
+
+/* ENCABEZADO Y TÍTULO BLOG */
+#home-banner {
+    // background-image: url(../img/bg02.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+
+    display: block;
+    margin: 0px auto;
+    width: 100%;
+    position: relative;
+    padding-top: 1px;
+    overflow: hidden;
+    background-color: $light-grey;
+
+    height: 340px;
+
+    @include tablet {
+        height: 450px;
+    }
+
+    .header-content {
+        position: relative;
+        max-width: 960px;
+        padding: 0 45px;
+        box-sizing: border-box;
+        // margin: 0 auto;
+
+        @include center;
+
+        top: 35%;
+
+        @include tablet {
+            top: 60%;
+        }
+
+        p {
+            color: #FFFFFF;
+            text-align: center;
+
+            font: {
+                family: $proxima-nova-light;
+                weight: $light;
+                size: $body-size;
+            }
+            letter-spacing: $spacing;
+            b {
+                font-weight: $bold;
+            }
+        }
+
+    }
+
+}
+
+
+
+
 /* ARTICLE BLOCK STYLES */
 article {
-    @include padding(60px null );
+    // @include padding(em(60px) null );
+    padding-bottom: em(60px);
 
     & p, h2 {
 
@@ -271,13 +473,13 @@ article {
 /* QUOTATIONS */
 .quote {
 
-    @include margin(40px 20px);
+    @include margin(em(40px) em(20px));
 
     @include mobile {
-        @include margin(40px 0 40px 72px);
+        @include margin(em(40px) 0 em(40px) em(72px));
     }
     @include desktop {
-        @include margin(40px 80px);
+        @include margin(em(40px) em(80px));
     }
 
     // Simple quote
@@ -295,13 +497,13 @@ article {
     // Important quote - with Big ''
     &.important {
 
-        @include margin(90px 20px 70px 20px); //Plus q:before height
+        @include margin(em(90px) em(20px) em(70px) em(20px)); //Plus q:before height
 
         @include mobile {
-            @include margin(50px 0 70px 72px);
+            @include margin(em(50px) 0 em(70px) em(72px));
         }
         @include desktop {
-            @include margin(50px 80px 70px 140px);
+            @include margin(em(50px) em(80px) em(70px) em(140px));
         }
 
         & q:before {
@@ -335,6 +537,7 @@ article {
         .author {
             @extend %footnote;
             float: right;
+            margin-top: 10px;
         }
     }
 
@@ -445,12 +648,10 @@ footer {
     }
 
     p.footerInfo {
+        @extend %footnote;
         color: $grey;
-        font: {
-            size: em(12px);
-            family: $proxima_nova_light;
-        }
         text-align: center;
+
         padding-top: 50px;
         padding-bottom: 35px;
     }
@@ -506,13 +707,65 @@ footer {
         }
     }
 
-    .logoFooter {
+    .footer-logo {
         @include size(120px);
-        font-size: em(120px);
-        color: $light-grey;
+        // font-size: em(120px);
+        // color: $light-grey;
         @include center;
     }
-    .logoFooter:hover {
+    .footer-logo:hover {
         color: #FFFFFF;
     }
+}
+
+
+
+
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+
+    .header-logo {
+        @include size(75px);
+        @include margin(40px null null 40px);
+        float: left;
+
+        &:hover {
+            color: #FFFFFF;
+        }
+    }
+}
+
+
+
+
+/*MENU GENERAL*/
+
+.navigation {
+    float: right;
+    margin-top: 40px;
+    margin-right: 40px;
+}
+
+nav#navigation a {
+    color: white;
+}
+
+ul#menu-sgr li {
+    float: left;
+    padding-right: 20px;
+}
+
+ul#menu-sebastiangonzalez li {
+    float: left;
+    padding-right: 20px;
+    margin-top: -10px;
+}
+
+ul#menu-sebastiangonzalez li a {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'proxima_nova_light';
 }

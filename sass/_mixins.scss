@@ -47,7 +47,7 @@
 
 // TEXT PREFS
 // Titles
-@mixin title($font, $weight, $size, $color, $up) {
+@mixin title($font, $weight, $size, $color, $line, $up) {
     color: $color;
     font: {
         size: $size;
@@ -59,8 +59,9 @@
     } @else {
         text-transform: none;
     }
-    line-height: $golden;
+    line-height: $line;
     letter-spacing: $spacing;
+    text-align: center;
 }
 
 // Quotes

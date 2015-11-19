@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'proxima_nova_semibold';
   src: url("../fonts/Proxima-Nova-Semibold.eot");
@@ -98,10 +99,20 @@ html {
   height: 100%;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
 body {
   background-color: #ffffff;
   color: #242424;
-  font-family: "Noto Serif";
+  font-family: "proxima_nova_light";
   font-size: 1em;
   font-weight: 400;
   line-height: 1em;
@@ -126,15 +137,6 @@ body {
   background-color: #e7595b;
   color: #ffffff;
   text-shadow: none;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
 }
 
 .wrap {
@@ -168,6 +170,212 @@ html, body {
   .container-fluid {
     padding-right: 5.625em;
     padding-left: 5.625em;
+  }
+}
+
+/* -------------------------------------------------- */
+/*  2.1 - CLEARFIX
+/* -------------------------------------------------- */
+.clear {
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+}
+
+.clearfix:after {
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+  content: ".";
+}
+
+/* -------------------------------------------------- */
+/*  2.2 - GENERAL
+/* -------------------------------------------------- */
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+img.alignleft {
+  margin-right: 20px;
+}
+
+img.alignright {
+  margin-left: 20px;
+}
+
+.aligncenter {
+  display: table;
+  margin: 0 auto;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.affix {
+  position: fixed;
+}
+
+/* -------------------------------------------------- */
+/*  2.3 - TYPOGRAPHY
+/* -------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "proxima_nova_semibold";
+  overflow: hidden;
+}
+
+h1 {
+  color: #242424;
+  font-size: 4.25em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.29412em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-top: 0.64706em;
+  margin-bottom: 0.32353em;
+}
+h1.blog-title {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  font-size: 2.625em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+@media only screen and (min-width: 62em) {
+  h1.blog-title {
+    font-size: 3.375em;
+    line-height: 1.25em;
+    margin-top: 0px;
+  }
+}
+
+h2 {
+  color: #242424;
+  font-size: 2.625em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.04762em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-top: 1.04762em;
+  margin-bottom: 0.52381em;
+}
+
+h3 {
+  color: #242424;
+  font-size: 1.625em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.69231em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-top: 0.84615em;
+  margin-bottom: 0.84615em;
+}
+
+h4 {
+  color: #242424;
+  font-size: 1em;
+  font-family: "proxima_nova_light";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.375em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-top: 1.375em;
+  margin-bottom: 1.375em;
+}
+
+h5 {
+  color: #242424;
+  font-size: 0.667em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.29412em;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+h6 {
+  color: #242424;
+  font-size: 0.444em;
+  font-family: "proxima_nova_semibold";
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.29412em;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+p {
+  font-family: "Noto Serif";
+  font-size: 1em;
+  margin-top: 1.125em;
+  text-align: justify;
+  line-height: 1.5;
+}
+@media only screen and (min-width: 62em) {
+  p {
+    font-size: 1.125em;
+  }
+}
+p.light {
+  font-weight: 300;
+}
+p.regular {
+  font-weight: 400;
+}
+p.bold {
+  font-weight: 700;
+}
+p.dropcap::first-letter {
+  float: left;
+  font-size: 5em;
+  line-height: 70px;
+  color: #d8444b;
+  padding-right: 10px;
+}
+@media only screen and (min-width: 62em) {
+  p.dropcap::first-letter {
+    line-height: 80px;
   }
 }
 
@@ -380,19 +588,63 @@ input[type="reset"]:focus {
 /*  2.5 - CONTENT BLOG
 /* -------------------------------------------------- */
 /* FOOTNOTE STYLES GENERATOR */
-article .article-bottom p.footnote, .quote.important .author, .image p.footnote, section#suscribe form#suscribe-form p {
+article .article-bottom p.footnote, .quote.important .author, .image p.footnote, section#suscribe form#suscribe-form p, footer p.footerInfo {
   color: #a0a0a0;
-  font-size: 0.75em;
+  font-size: 0.875em;
   font-family: "proxima_nova_light";
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.25;
   letter-spacing: 0.05em;
+}
+
+/* ENCABEZADO Y T├ìTULO BLOG */
+#home-banner {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  display: block;
+  margin: 0px auto;
+  width: 100%;
+  position: relative;
+  padding-top: 1px;
+  overflow: hidden;
+  background-color: #a0a0a0;
+  height: 340px;
+}
+@media only screen and (min-width: 62em) {
+  #home-banner {
+    height: 450px;
+  }
+}
+#home-banner .header-content {
+  position: relative;
+  max-width: 960px;
+  padding: 0 45px;
+  box-sizing: border-box;
+  display: table;
+  margin: 0 auto;
+  top: 35%;
+}
+@media only screen and (min-width: 62em) {
+  #home-banner .header-content {
+    top: 60%;
+  }
+}
+#home-banner .header-content p {
+  color: #FFFFFF;
+  text-align: center;
+  font-family: "proxima_nova_light";
+  font-weight: 300;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+}
+#home-banner .header-content p b {
+  font-weight: 700;
 }
 
 /* ARTICLE BLOCK STYLES */
 article {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 3.75em;
 }
 article h2 {
   color: #242424;
@@ -400,8 +652,9 @@ article h2 {
   font-family: "Noto Serif";
   font-weight: 700;
   text-transform: none;
-  line-height: 1.5;
+  line-height: 1.29412em;
   letter-spacing: 0.05em;
+  text-align: center;
   padding-bottom: 12px;
   text-align: left;
 }
@@ -423,16 +676,16 @@ article .article-bottom p.footnote:before {
 
 /* QUOTATIONS */
 .quote {
-  margin: 40px 20px;
+  margin: 2.5em 1.25em;
 }
 @media only screen and (min-width: 48em) {
   .quote {
-    margin: 40px 0 40px 72px;
+    margin: 2.5em 0 2.5em 4.5em;
   }
 }
 @media only screen and (min-width: 71.25em) {
   .quote {
-    margin: 40px 80px;
+    margin: 2.5em 5em;
   }
 }
 .quote q {
@@ -452,16 +705,16 @@ article .article-bottom p.footnote:before {
   content: close-quote;
 }
 .quote.important {
-  margin: 90px 20px 70px;
+  margin: 5.625em 1.25em 4.375em;
 }
 @media only screen and (min-width: 48em) {
   .quote.important {
-    margin: 50px 0 70px 72px;
+    margin: 3.125em 0 4.375em 4.5em;
   }
 }
 @media only screen and (min-width: 71.25em) {
   .quote.important {
-    margin: 50px 80px 70px 140px;
+    margin: 3.125em 5em 4.375em 8.75em;
   }
 }
 .quote.important q:before {
@@ -492,6 +745,7 @@ article .article-bottom p.footnote:before {
 }
 .quote.important .author {
   float: right;
+  margin-top: 10px;
 }
 .quote q:after {
   content: "''";
@@ -568,12 +822,13 @@ section#suscribe form#suscribe-form {
 }
 section#suscribe form#suscribe-form h2 {
   color: #ffffff;
-  font-size: 1.44444em;
+  font-size: 1.5em;
   font-family: "proxima_nova_light";
   font-weight: 300;
   text-transform: none;
-  line-height: 1.5;
+  line-height: 1.2em;
   letter-spacing: 0.05em;
+  text-align: center;
   text-align: center;
 }
 section#suscribe form#suscribe-form p {
@@ -594,8 +849,6 @@ footer {
 }
 footer p.footerInfo {
   color: #464646;
-  font-size: 0.75em;
-  font-family: "proxima_nova_light";
   text-align: center;
   padding-top: 50px;
   padding-bottom: 35px;
@@ -648,15 +901,58 @@ footer .preFooter ul li a {
 footer .preFooter ul li a:hover {
   color: #a0a0a0;
 }
-footer .logoFooter {
+footer .footer-logo {
   height: 120px;
   width: 120px;
-  font-size: 7.5em;
-  color: #a0a0a0;
   display: table;
   margin: 0 auto;
 }
-footer .logoFooter:hover {
+footer .footer-logo:hover {
   color: #FFFFFF;
 }
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
+header .header-logo {
+  height: 75px;
+  width: 75px;
+  margin-top: 40px;
+  margin-left: 40px;
+  float: left;
+}
+header .header-logo:hover {
+  color: #FFFFFF;
+}
+
+/*MENU GENERAL*/
+.navigation {
+  float: right;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+
+nav#navigation a {
+  color: white;
+}
+
+ul#menu-sgr li {
+  float: left;
+  padding-right: 20px;
+}
+
+ul#menu-sebastiangonzalez li {
+  float: left;
+  padding-right: 20px;
+  margin-top: -10px;
+}
+
+ul#menu-sebastiangonzalez li a {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: 'proxima_nova_light';
+}
+
 /*# sourceMappingURL=alternative.css.map */

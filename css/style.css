@@ -266,54 +266,59 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   color: #242424;
-  font-size: 3.375em;
+  font-size: 4.25em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 1.5;
+  line-height: 1.29412em;
   letter-spacing: 0.05em;
+  text-align: center;
   text-align: center;
 }
 h1.blog-title {
-  color: #242424;
-  font-size: 3.375em;
+  color: #ffffff;
+  font-size: 2.625em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 1.5;
+  line-height: 1em;
   letter-spacing: 0.05em;
+  text-align: center;
 }
 
 h2 {
   color: #242424;
-  font-size: 2.25em;
+  font-size: 2.625em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 1.5;
+  line-height: 1.04762em;
   letter-spacing: 0.05em;
+  text-align: center;
   text-align: center;
 }
 
 h3 {
   color: #242424;
-  font-size: 1.5em;
+  font-size: 1.625em;
   font-family: "proxima_nova_semibold";
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 1.5;
+  line-height: 1.69231em;
   letter-spacing: 0.05em;
+  text-align: center;
   text-align: center;
 }
 
 h4 {
   color: #242424;
   font-size: 1em;
-  font-family: "proxima_nova_semibold";
+  font-family: "proxima_nova_light";
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 1.5;
+  line-height: 1.375em;
   letter-spacing: 0.05em;
+  text-align: center;
   text-align: center;
 }
 
@@ -323,8 +328,9 @@ h5 {
   font-family: "proxima_nova_semibold";
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 1.5;
+  line-height: 1.29412em;
   letter-spacing: 0.05em;
+  text-align: center;
   text-align: center;
 }
 
@@ -334,8 +340,9 @@ h6 {
   font-family: "proxima_nova_semibold";
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 1.5;
+  line-height: 1.29412em;
   letter-spacing: 0.05em;
+  text-align: center;
   text-align: center;
 }
 
@@ -652,8 +659,9 @@ article h2 {
   font-family: "Noto Serif";
   font-weight: 700;
   text-transform: none;
-  line-height: 1.5;
+  line-height: 1.29412em;
   letter-spacing: 0.05em;
+  text-align: center;
   padding-bottom: 12px;
   text-align: left;
 }
@@ -750,12 +758,13 @@ section#suscribe form#suscribe-form {
 }
 section#suscribe form#suscribe-form h2 {
   color: #ffffff;
-  font-size: 1.44444em;
+  font-size: 1.5em;
   font-family: "proxima_nova_light";
   font-weight: 300;
   text-transform: none;
-  line-height: 1.5;
+  line-height: 1.2em;
   letter-spacing: 0.05em;
+  text-align: center;
   text-align: center;
 }
 section#suscribe form#suscribe-form p {

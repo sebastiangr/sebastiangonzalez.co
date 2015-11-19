@@ -46,14 +46,45 @@
 
     <body>
 
+        <header id="header" class="mobile_fixed sticky">
+
+            <div class="header-in">
+
+                <div class="logo">
+                    <img class="header-logo" src="img/logo-white.svg" alt="www.sebastiangonzalez.co">
+                </div>
+
+                <a id="responsive-nav-button" class="responsive-nav-button" href="#"></a>
+
+                <nav id="navigation" class="navigation">
+                    <ul id="menu-sebastiangonzalez" class="menu">
+                        <li><a href="#">Bio</a></li>
+                        <li><a href="#">Portafolio</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Search</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </header>
+
+
         <article>
+
+            <div id="home-banner" style="background-image: url(img/bg02.jpg);">
+                <div class="header-content">
+                    <h1 class="blog-title">EL MIEDO A LA LIBERTAD</h1>
+                    <p><b>Por:</b> Sebastián González R.</p>
+                </div>
+            </div>
+
 
             <div class="wrap container-fluid">
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="content">
-
-                            <h1 class="blog-title">Título entrada del blog.</h1>
 
                             <div class="quote important">
                                 <q>Las inclinaciones humanas más bellas, así como las más repugnantes, no forman parte de una naturaleza humana fija y biológicamente dada, sino que resultan del proceso social que crea el hombre.</q>
@@ -81,6 +112,7 @@
                                 <p class="footnote">Getty images<br>2015</p>
                             </div>
 
+                            <p>Aorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id mi ipsum. Nunc quis felis malesuada, tristique nunc ac, malesuada arcu. Praesent blandit massa nisl, quis fringilla ipsum facilisis in. Praesent sollicitudin augue id pellentesque dictum. Quisque malesuada nec quam eget scelerisque. Integer consequat laoreet eleifend. <em>Proin laoreet malesuada elit venenatis tincidunt.</em> Curabitur quis dolor eros. Vestibulum vel lectus sed nisl dapibus varius eget vel nisl. Nunc quis faucibus urna, ac fringilla orci.</p>
                             <p>Aorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id mi ipsum. Nunc quis felis malesuada, tristique nunc ac, malesuada arcu. Praesent blandit massa nisl, quis fringilla ipsum facilisis in. Praesent sollicitudin augue id pellentesque dictum. Quisque malesuada nec quam eget scelerisque. Integer consequat laoreet eleifend. <em>Proin laoreet malesuada elit venenatis tincidunt.</em> Curabitur quis dolor eros. Vestibulum vel lectus sed nisl dapibus varius eget vel nisl. Nunc quis faucibus urna, ac fringilla orci.</p>
 
                             <br><br>
@@ -140,6 +172,18 @@
                             <h2>Entradas</h2>
                         </div>
 
+                        <h1>Título</h1>
+                        <h1>HEADING H1</h1>
+
+                        <h2>Título</h2>
+                        <h2>HEADING H2</h2>
+
+                        <h3>Título</h3>
+                        <h3>HEADING H3</h3>
+
+                        <h4>Título</h4>
+                        <h4>HEADING H4</h4>
+
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, omnis atque tempore aliquid ab laboriosam sapiente, vitae natus excepturi dolor eveniet earum veritatis temporibus. Repellat voluptatibus quam, tenetur rem aut.</p>
 
                     </div>
@@ -163,8 +207,8 @@
             </div>
 
             <div class="footer">
-                <div class="logoFooter">
-                    <img class="logoFooter" src="img/logo-white.svg" alt="Kiwi standing on oval">
+                <div class="footer-logo">
+                    <img class="footer-logo" src="img/logo-white.svg" alt="www.sebastiangonzalez.co">
                 </div>
                 <p class="footerInfo">2015 - Todos los derechos reservados <br>sebastiangonzalez.co</p>
             </div>
@@ -172,17 +216,17 @@
         </footer>
 
 
-<!--         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="js/jQuery.scrollSpeed.js"></script> -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="js/jQuery.scrollSpeed.js"></script>
 
         <!-- SIRVE PERO SE MUEVE RARO -->
-<!--    <script src="js/main.js"></script> -->
+        <script src="js/scripts.js"></script>
 
         <script>
             // SMOOTH MOUSE SCROLL
-            // $(function() {
-            //     jQuery.scrollSpeed(40, 800);
-            // });
+            $(function() {
+                jQuery.scrollSpeed(40, 800);
+            });
         </script>
 
     </body>

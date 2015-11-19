@@ -21,6 +21,7 @@ $spacing: 0.05em;
 
 // Sizes
 $body-size: em(16px);
+$text-size: em(18px);
 $footer-size: 1em/2;
 
 // Colors
@@ -50,44 +51,85 @@ $mobile-margin: 2.875em; // 46px
 $tablet-margin: 6.875em; // 110px
 $desktop-margin: 5.625em; // 90px
 
+// h1 Heading params
+$h1-font-size: 4.25em;
+$h1-line: 0.323529412em;
+$h1-lines: 4;
+$h1-line-height: $h1-line * $h1-lines;
+$h1-margin-top: 2 * $h1-line;
+$h1-margin-bottom: 1 * $h1-line;
+
+// h2 Heading params
+$h2-font-size: 2.625em;
+$h2-line: 0.523809524em;
+$h2-lines: 2;
+$h2-line-height: $h2-line * $h2-lines;
+$h2-margin-top: 2 * $h2-line;
+$h2-margin-bottom: 1 * $h2-line;
+
+// h3 Heading params
+$h3-font-size: 1.625em;
+$h3-line: 0.846153846em;
+$h3-lines: 2;
+$h3-line-height: $h3-line * $h3-lines;
+$h3-margin-top: 1 * $h3-line;
+$h3-margin-bottom: 1 * $h3-line;
+
+// h4 Heading params
+$h4-font-size: 1em;
+$h4-line: 1.375em;
+$h4-lines: 1;
+$h4-line-height: $h4-line * $h4-lines;
+$h4-margin-top: 1 * $h4-line;
+$h4-margin-bottom: 1 * $h4-line;
+
+// 3.375em
 // Titles
 $blog-title: (
     'font': $proxima-nova-sb,
     'weight': $regular,
-    'size': 3.375em,
-    'color': $dark-grey,
+    'size':  2.625em,
+    'color': $white,
+    'line': 1em,
     'up': true
 );
 
+// 3.375em
 $h1-title: (
     'font': $proxima-nova-sb,
     'weight': $regular,
-    'size': 3.375em,
+    'size': $h1-font-size,
     'color': $dark-grey,
+    'line': $h1-line-height,
     'up': true
 );
 
+// 2.25em
 $h2-title: (
     'font': $proxima-nova-sb,
     'weight': $regular,
-    'size': 2.25em,
+    'size': $h2-font-size,
     'color': $dark-grey,
+    'line': $h2-line-height,
     'up': true
 );
 
+// 1.5em
 $h3-title: (
     'font': $proxima-nova-sb,
     'weight': $regular,
-    'size': 1.5em,
+    'size': $h3-font-size,
     'color': $dark-grey,
+    'line': $h3-line-height,
     'up': true
 );
 
 $h4-title: (
-    'font': $proxima-nova-sb,
+    'font': $proxima-nova-light,
     'weight': $regular,
-    'size': 1em,
+    'size': $h4-font-size,
     'color': $dark-grey,
+    'line': $h4-line-height,
     'up': true
 );
 
@@ -96,6 +138,7 @@ $h5-title: (
     'weight': $regular,
     'size': 0.667em,
     'color': $dark-grey,
+    'line': $h1-line-height,
     'up': true
 );
 
@@ -104,6 +147,7 @@ $h6-title: (
     'weight': $regular,
     'size': 0.444em,
     'color': $dark-grey,
+    'line': $h1-line-height,
     'up': true
 );
 
@@ -112,13 +156,15 @@ $entry-title: (
     'weight': $bold,
     'size': em(32px,18px),
     'color': $dark-grey,
+    'line': $h1-line-height,
     'up': false
 );
 
 $suscribe-title: (
     'font': $proxima-nova-light,
     'weight': $light,
-    'size': em(26px,18px),
+    'size': em(24px),
     'color': $white,
+    'line': 1.2em,
     'up': false
 );
