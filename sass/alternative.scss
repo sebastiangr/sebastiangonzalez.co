@@ -585,6 +585,7 @@ article {
         @extend %footnote;
         padding-top: 8px;
         margin-left: 25px;
+        margin-top: 0px;
 
         @include mobile {
             margin-left: 30px;
@@ -669,14 +670,18 @@ footer {
             padding-top: 62px;
 
             li {
-                color: $near-white;
-                font : {
-                    family: $proxima_nova_light;
-                    size: em(16px);
-                    weight: $light;
-                }
-                line-height: $golden;
-                text-transform: uppercase;
+                // color: $near-white;
+                // font : {
+                //     family: $proxima_nova_light;
+                //     size: em(16px);
+                //     weight: $light;
+                // }
+                // line-height: $golden;
+                // text-transform: uppercase;
+                // @include title($menu-text...);
+                @include title($menu...);
+
+
                 letter-spacing: $spacing;
                 text-align: center;
                 float: none;
@@ -712,9 +717,16 @@ footer {
         // font-size: em(120px);
         // color: $light-grey;
         @include center;
-    }
-    .footer-logo:hover {
-        color: #FFFFFF;
+        transition: 600ms;
+
+        &:hover {
+            -webkit-opacity: 0.75;
+            -moz-opacity: 0.75;
+            -ms-opacity: 0.75;
+            -o-opacity: 0.75;
+            opacity: 0.75;
+
+        }
     }
 }
 
@@ -724,18 +736,72 @@ footer {
 
 header {
     width: 100%;
-    position: fixed;
+    position: absolute;
     z-index: 999;
+
+    // transition: background 200ms;
+
+
+    &.black-bg {
+        background: $dark-grey;
+        transition: 800ms;
+    }
+
+
+    .header-in {
+        width: 100%;
+
+
+        &.header-fixed {
+            // @include tablet {
+            //     max-width: 940px;
+            // }
+            @include desktop {
+                max-width: 1040px;
+            }
+            margin: 0 auto;
+            transition-timing-function: ease-out;
+            // transition: 600ms;
+        }
+    }
+
 
     .header-logo {
         @include size(75px);
-        @include margin(40px null null 40px);
+        @include margin(25px null 10px 25px);
         float: left;
 
+        @include mobile {
+            @include margin(40px null 10px 40px);
+        }
+
+        transition: 600ms;
+
         &:hover {
-            color: #FFFFFF;
+            -webkit-opacity: 0.75;
+            -moz-opacity: 0.75;
+            -ms-opacity: 0.75;
+            -o-opacity: 0.75;
+            opacity: 0.75;
         }
     }
+
+    .header-logo-scroll {
+        @include size(60px);
+        @include margin(10px null 10px 40px);
+        float: left;
+
+        transition: 600ms;
+
+        &:hover {
+            -webkit-opacity: 0.75;
+            -moz-opacity: 0.75;
+            -ms-opacity: 0.75;
+            -o-opacity: 0.75;
+            opacity: 0.75;
+        }
+    }
+
 }
 
 
@@ -744,28 +810,41 @@ header {
 /*MENU GENERAL*/
 
 .navigation {
+
+    display: none;
+
+    @include mobile {
+        display: block;
+    }
+
     float: right;
     margin-top: 40px;
     margin-right: 40px;
+
+    // nav#navigation {
+
+
+    // }
+
+    ul#menu-desktop {
+        li {
+            float: left;
+            padding-right: 20px;
+            margin-top: -10px;
+
+            a {
+                @include title($menu...);
+                // text-transform: uppercase;
+                // font-size: em(16px);
+                // font-family: 'proxima_nova_light';
+                // color: $near-white;
+            }
+
+            a:hover {
+                color: $white;
+            }
+        }
+    }
+
 }
 
-nav#navigation a {
-    color: white;
-}
-
-ul#menu-sgr li {
-    float: left;
-    padding-right: 20px;
-}
-
-ul#menu-sebastiangonzalez li {
-    float: left;
-    padding-right: 20px;
-    margin-top: -10px;
-}
-
-ul#menu-sebastiangonzalez li a {
-    text-transform: uppercase;
-    font-size: 16px;
-    font-family: 'proxima_nova_light';
-}

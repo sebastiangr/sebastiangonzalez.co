@@ -31,22 +31,6 @@ var main = ( function($){
 
     };
 
-    // var isMobile = function(){
-
-    //     if( settings.verbose)
-    //         console.log( 'isMobile' );
-
-    //     return (
-    //     (navigator.userAgent.match(/Android/i)) ||
-    //     (navigator.userAgent.match(/webOS/i)) ||
-    //     (navigator.userAgent.match(/iPhone/i)) ||
-    //     (navigator.userAgent.match(/iPod/i)) ||
-    //     (navigator.userAgent.match(/iPad/i)) ||
-    //     (navigator.userAgent.match(/BlackBerry/))
-    //     );
-    // };
-
-
     /**
      * Parallax Banner Function
      */
@@ -77,41 +61,33 @@ var main = ( function($){
     };
 
 
-    // $(window).scroll(function(){
-    //     if ($(this).scrollTop() > 450) {
-    //         // $('#sticky').fadeIn(500);
-    //         $('.infoBlog').css({
-    //             'position' : 'fixed'
-    //         });
-    //         $('article').css({
-    //             'margin-top' : '60px'
-    //         });
-    //         $('.infoBar').fadeOut(0);
-    //         $('.stickyBar').fadeIn(500);
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 450) {
 
-    //         // $('#sticky').slideDown();
-    //         // $('#sticky').animate({
-    //         //     "margin-top" : "0px"
-    //         // }, 300 );
+            $("header").addClass("black-bg affix");
+            $("header .logo img").addClass("header-logo-scroll");
+            $(".header-in").addClass("header-fixed");
 
-    //     } else {
-    //         // $('#sticky').fadeOut(200);
-    //         $('.infoBlog').css({
-    //             'position' : 'relative'
-    //         });
-    //         $('article').css({
-    //             'margin-top' : '0px'
-    //         });
-    //         $('.infoBar').fadeIn(500);
-    //         $('.stickyBar').fadeOut(0);
+            // $("header").addClass("black-bg affix").delay(600).queue(function(next){
+            //     $('header .logo img').addClass('header-logo-scroll');
+            //     $('.header-in').addClass('header-fixed');
+            //         // next();
+            // });
 
-    //         // $('#sticky').slideUp(200);
-    //         // $('#sticky').animate({
-    //         //     "margin-top" : "-75px"
-    //         // }, 300 );
-    //     }
+        } else {
 
-    // });
+            $("header").removeClass("black-bg affix");
+            $("header .logo img").removeClass("header-logo-scroll");
+            $(".header-in").removeClass("header-fixed");
+
+
+            // $("header").removeClass("black-bg affix").delay(100).queue(function(next){
+            //     $('header .logo img').removeClass('header-logo-scroll');
+            //     $('.header-in').removeClass('header-fixed');
+            // });
+        }
+
+    });
 
 
 

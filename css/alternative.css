@@ -563,7 +563,7 @@ textarea:focus,
 select:focus,
 option:focus,
 button:focus {
-  background-color: rgba(160, 160, 160, 0.8);
+  background-color: #e0e0e0;
   border-color: #242424;
 }
 
@@ -791,6 +791,7 @@ article .article-bottom p.footnote:before {
 .image p.footnote {
   padding-top: 8px;
   margin-left: 25px;
+  margin-top: 0px;
 }
 @media only screen and (min-width: 48em) {
   .image p.footnote {
@@ -868,11 +869,13 @@ footer .preFooter ul {
 }
 footer .preFooter ul li {
   color: #f5f5f5;
-  font-family: "proxima_nova_light";
   font-size: 1em;
+  font-family: "proxima_nova_light";
   font-weight: 300;
-  line-height: 1.5;
   text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
   letter-spacing: 0.05em;
   text-align: center;
   float: none;
@@ -906,53 +909,111 @@ footer .footer-logo {
   width: 120px;
   display: table;
   margin: 0 auto;
+  -webkit-transition: 600ms;
+          transition: 600ms;
 }
 footer .footer-logo:hover {
-  color: #FFFFFF;
+  -webkit-opacity: 0.75;
+  -moz-opacity: 0.75;
+  -ms-opacity: 0.75;
+  -o-opacity: 0.75;
+  opacity: 0.75;
 }
 
 header {
   width: 100%;
-  position: fixed;
+  position: absolute;
   z-index: 999;
+}
+header.black-bg {
+  background: #242424;
+  -webkit-transition: 800ms;
+          transition: 800ms;
+}
+header .header-in {
+  width: 100%;
+}
+header .header-in.header-fixed {
+  margin: 0 auto;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+@media only screen and (min-width: 71.25em) {
+  header .header-in.header-fixed {
+    max-width: 1040px;
+  }
 }
 header .header-logo {
   height: 75px;
   width: 75px;
-  margin-top: 40px;
-  margin-left: 40px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  margin-left: 25px;
   float: left;
+  -webkit-transition: 600ms;
+          transition: 600ms;
+}
+@media only screen and (min-width: 48em) {
+  header .header-logo {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+  }
 }
 header .header-logo:hover {
-  color: #FFFFFF;
+  -webkit-opacity: 0.75;
+  -moz-opacity: 0.75;
+  -ms-opacity: 0.75;
+  -o-opacity: 0.75;
+  opacity: 0.75;
+}
+header .header-logo-scroll {
+  height: 60px;
+  width: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  float: left;
+  -webkit-transition: 600ms;
+          transition: 600ms;
+}
+header .header-logo-scroll:hover {
+  -webkit-opacity: 0.75;
+  -moz-opacity: 0.75;
+  -ms-opacity: 0.75;
+  -o-opacity: 0.75;
+  opacity: 0.75;
 }
 
 /*MENU GENERAL*/
 .navigation {
+  display: none;
   float: right;
   margin-top: 40px;
   margin-right: 40px;
 }
-
-nav#navigation a {
-  color: white;
+@media only screen and (min-width: 48em) {
+  .navigation {
+    display: block;
+  }
 }
-
-ul#menu-sgr li {
-  float: left;
-  padding-right: 20px;
-}
-
-ul#menu-sebastiangonzalez li {
+.navigation ul#menu-desktop li {
   float: left;
   padding-right: 20px;
   margin-top: -10px;
 }
-
-ul#menu-sebastiangonzalez li a {
+.navigation ul#menu-desktop li a {
+  color: #f5f5f5;
+  font-size: 1em;
+  font-family: "proxima_nova_light";
+  font-weight: 300;
   text-transform: uppercase;
-  font-size: 16px;
-  font-family: 'proxima_nova_light';
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+.navigation ul#menu-desktop li a:hover {
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=alternative.css.map */

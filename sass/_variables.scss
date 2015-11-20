@@ -168,3 +168,12 @@ $suscribe-title: (
     'line': 1.2em,
     'up': false
 );
+
+$menu: (
+    'font': $proxima-nova-light,
+    'weight': $light,
+    'size': em(16px),
+    'color': $near-white,
+    'line': $golden,
+    'up': true
+);

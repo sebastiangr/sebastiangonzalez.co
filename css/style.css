@@ -554,7 +554,7 @@ textarea:focus,
 select:focus,
 option:focus,
 button:focus {
-  background-color: rgba(160, 160, 160, 0.8);
+  background-color: #e0e0e0;
   border-color: #242424;
 }
 
