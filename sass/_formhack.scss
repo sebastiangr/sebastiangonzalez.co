@@ -40,7 +40,7 @@ $fh-fieldset-bare: false !default;
 // Buttons & Input Submits
 $fh-button-height: 50px !default;
 $fh-button-width: 100% !default;
-$fh-button-max-width: 200px !default;
+$fh-button-max-width: 240px !default;
 $fh-button-font-color: $near-white !default;
 $fh-button-bg-color: $red !default;
 $fh-button-hover-bg-color: $dark-red !default;
@@ -119,7 +119,8 @@ input[type="file"],
 select,
 textarea {
 	width: $fh-input-width;
-	max-width: $fh-input-max-width;
+	color: $grey;
+	// max-width: $fh-input-max-width;
 	padding: $fh-input-height / 5;
 	padding-left: 20px;
 	background-color: $fh-input-bg-color;
@@ -131,6 +132,9 @@ textarea {
 
     @include speed-normal;
 }
+// textarea {
+// 	max-width: none;
+// }
 
 /* Fields with standard height */
 input[type="text"],
@@ -249,7 +253,7 @@ input[type="reset"],
 input[type="image"] {
 	height: $fh-button-height;
 	width: $fh-button-width;
-	max-width: $fh-button-max-width;
+	// max-width: $fh-button-max-width;
 	background-color: $fh-button-bg-color;
 	padding: $fh-input-height / 5;
 	cursor: pointer;

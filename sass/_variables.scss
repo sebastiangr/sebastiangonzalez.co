@@ -151,6 +151,7 @@ $h6-title: (
     'up': true
 );
 
+// Entry title
 $entry-title: (
     'font': $noto-serif,
     'weight': $bold,
@@ -160,6 +161,7 @@ $entry-title: (
     'up': false
 );
 
+// Suscribe title styles
 $suscribe-title: (
     'font': $proxima-nova-light,
     'weight': $light,
@@ -169,11 +171,32 @@ $suscribe-title: (
     'up': false
 );
 
+// Menu styles
 $menu: (
     'font': $proxima-nova-light,
     'weight': $light,
     'size': em(16px),
     'color': $near-white,
+    'line': $golden,
+    'up': true
+);
+
+// Comments - User name
+$user-name: (
+    'font': $proxima-nova-sb,
+    'weight': $regular,
+    'size': em(18px),
+    'color': $grey,
+    'line': $golden,
+    'up': true
+);
+
+// Comments - Date
+$comment-date: (
+    'font': $proxima-nova-light,
+    'weight': $light,
+    'size': em(14px),
+    'color': $light-grey,
     'line': $golden,
     'up': true
 );

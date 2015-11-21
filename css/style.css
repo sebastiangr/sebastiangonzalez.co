@@ -423,7 +423,7 @@ input[type="file"],
 select,
 textarea {
   width: 100%;
-  max-width: 400px;
+  color: #464646;
   padding: 10px;
   padding-left: 20px;
   background-color: #f5f5f5;
@@ -519,7 +519,6 @@ input[type="reset"],
 input[type="image"] {
   height: 50px;
   width: 100%;
-  max-width: 200px;
   background-color: #d8444b;
   padding: 10px;
   cursor: pointer;
@@ -866,4 +865,5 @@ footer .logoFooter:hover {
   display: table;
   margin: 0 auto;
 }
+
 /*# sourceMappingURL=style.css.map */
