@@ -52,13 +52,13 @@
     </head>
 
     <body>
-
+        <div id="start"></div>
         <header id="header" class="">
 
             <div class="header-in">
 
                 <div class="logo">
-                    <a href="#header">
+                    <a href="#start">
                         <img class="header-logo" src="img/logo-white.svg" alt="www.sebastiangonzalez.co">
                     </a>
                 </div>
@@ -71,7 +71,12 @@
                         <li><a href="#">Portafolio</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Search</a></li>
+                        <li>
+                            <div class="search-bar">
+                                <input type="text" placeholder="Buscar..." required></input>
+                                <div class="icon-search"></div>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
 
@@ -96,30 +101,12 @@
                                 <span class="entry-date">12 DE AGOSTO DE 2015</span>
                             </div>
                             <div class="col-xs-12 col-md-6">
-                                <span class="entry-data">CATEGORÍA - 10 COMENTARIOS</span>
+                                <span class="entry-data">CATEGORÍA -
+                                <a  class="another"  href="#comments">10 COMENTARIOS</a></span>
                             </div>
                     </div>
                 </div>
             </div>
-
-
-<!--
-            <div class="info-blog">
-
-
-                        <div class="infoBar">
-                            <div class="col-md-6">
-                                <p>12  AGOSTO DE 2015</p>
-                            </div>
-                            <div class="col-md-6">
-                                <p class="align-right">CATEGORÍA - 10 COMENTARIOS</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div> -->
-
 
             <div class="wrap container-fluid">
                 <div class="row">
@@ -132,23 +119,27 @@
                                 <span class="author">Erich Fromm. El miedo a la libertad (1941).</span>
                             </div>
 
-                            <p class="dropcap">Aorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id mi ipsum. Nunc quis felis malesuada, tristique nunc ac, malesuada arcu. Praesent blandit massa nisl, quis fringilla ipsum facilisis in. Praesent sollicitudin augue id pellentesque dictum. Quisque malesuada nec quam eget scelerisque. Integer consequat laoreet eleifend. <em>Proin laoreet malesuada elit venenatis tincidunt.</em> Curabitur quis dolor eros. Vestibulum vel lectus sed nisl dapibus varius eget vel nisl. Nunc quis faucibus urna, ac fringilla orci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nobis quas, in est veniam. Veritatis obcaecati, officiis temporibus voluptatem illum nisi laudantium impedit cupiditate. Voluptate laborum perferendis tempora libero dicta.</p>
+                            <p class="dropcap">Aorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id mi ipsum. Nunc quis felis malesuada, tristique nunc ac, malesuada arcu. Praesent blandit massa nisl, quis fringilla ipsum facilisis in. Praesent sollicitudin augue id pellentesque dictum. Quisque malesuada nec quam eget scelerisque. Integer consequat laoreet eleifend. <em>Proin laoreet malesuada elit venenatis tincidunt.</em> Curabitur quis dolor eros. Vestibulum vel lectus sed nisl dapibus varius eget vel nisl. Nunc quis faucibus urna, ac fringilla orci. Lorem ipsum<sup><a class="suplink" href="#sup1">1</a></sup> dolor sit amet, consectetur adipisicing elit. Distinctio nobis quas, in est veniam. Veritatis obcaecati, officiis temporibus voluptatem illum nisi laudantium impedit cupiditate. Voluptate laborum perferendis tempora libero dicta.</p>
 
                             <div class="quote">
                                 <q> Praesent sollicitudin augue id pellentesque dictum. Quisque malesuada nec quam eget scelerisque. Integer consequat laoreet eleifend. Proin laoreet malesuada elit venenatis tincidunt. Curabitur quis dolor eros.</q>
                             </div>
 
                             <div class="image">
-                                <img src="img/image01.jpg" alt="">
+                                <a href="img/image01.jpg">
+                                    <img src="img/image01.jpg" alt="Image One" rel="lightbox"/>
+                                </a>
+
+                                <!-- <img src="img/image01.jpg" alt="" id="imagelightbox"> -->
                                 <p class="footnote">Getty images<br>2015</p>
                             </div>
 
                             <h2>Lorem ipsum dolor.</h2>
-                            <p class="fadeInBlock"><b>Lorem ipsum dolor sit amet</b>, consectetur adipiscing elit. Morbi id mi ipsum. Nunc quis felis malesuada, tristique nunc ac, malesuada arcu. Praesent blandit massa nisl, quis fringilla ipsum facilisis in. Praesent sollicitudin augue id pellentesque dictum. Quisque malesuada nec quam eget scelerisque. Integer consequat laoreet eleifend. <a href="">Proin laoreet malesuada elit</a> venenatis tincidunt. Curabitur quis dolor eros. Vestibulum vel lectus sed nisl dapibus varius eget vel nisl. Nunc quis faucibus urna, ac fringilla orci.</p>
+                            <p class="fadeInBlock"><b>Lorem ipsum dolor sit amet</b>, consectetur adipiscing elit. Morbi id mi ipsum. Nunc quis felis malesuada, tristique nunc ac, malesuada arcu. Praesent blandit massa nisl, quis fringilla ipsum facilisis in. Praesent sollicitudin augue id Darwin<sup><a class="suplink" href="#sup2">2</a></sup> pellentesque dictum. Quisque malesuada nec quam eget scelerisque. Integer consequat laoreet eleifend. <a href="">Proin laoreet malesuada elit</a> venenatis tincidunt. Curabitur quis dolor eros. Vestibulum vel lectus sed nisl dapibus varius eget vel nisl. Nunc quis faucibus urna, ac fringilla orci.</p>
                             <br>
 
                             <div class="image">
-                                <img src="img/image02.jpg" alt="">
+                                <img src="img/image02.jpg" alt="Image Two"  rel="lightbox">
                                 <p class="footnote">Getty images<br>2015</p>
                             </div>
 
@@ -158,7 +149,14 @@
                             <br><br>
 
                             <div class="article-bottom">
-                                <p class="footnote">Fotografía título: unsplash.com</p>
+                                <p class="footnote">Fotografía título: unsplash.com<br>
+                                <span id="sup1">
+                                    <sup>1</sup> About this bla bla. <br>
+                                </span>
+                                <span id="sup2">
+                                    <sup>2</sup> <a href="http://www.google.com" target="_blank">www.google.com</a>
+                                </span>
+                                </p>
                             </div>
 
                         </div>
@@ -336,13 +334,13 @@
                         </div>
 
                         <div class="entries-nav">
-                            <a class="btn prev"></a>
-                            <a class="btn next"></a>
+                            <a class="btn prev unselectable"></a>
+                            <a class="btn next unselectable"></a>
 <!--                             <a class="btn play">Autoplay</a>
                             <a class="btn stop">Stop</a> -->
                         </div>
 
-                        <div id="owl-demo" class="owl-carousel owl-theme">
+                        <div id="entries-slider" class="owl-carousel owl-theme">
                             <div class="item block-entry">
                                 <div class="title-entries">
                                     <h2>Título 1</h2>
@@ -416,7 +414,7 @@
 
             <div class="footer">
                 <div class="footer-logo">
-                    <a href="#header">
+                    <a href="http://www.sebastiangonzalez.co">
                         <img class="footer-logo" src="img/logo-white.svg" alt="www.sebastiangonzalez.co">
                     </a>
                 </div>
@@ -425,22 +423,36 @@
 
         </footer>
 
+        <!-- <a href="#start" class="cd-top">Top</a> -->
+
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="js/jQuery.scrollSpeed.js"></script>
+
+        <!-- For scrolling -->
+        <script src="js/jQuery.scrollSpeed.min.js"></script>
 
         <!-- OWL Carousel -->
-        <script src="js/owl.carousel.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+
 
         <script src="js/scripts.js"></script>
 
 
 
         <script>
-            // SMOOTH MOUSE SCROLL
-            $(function() {
-                jQuery.scrollSpeed(40, 800);
-            });
+            // SMOOTH MOUSE SCROLL ONLY ON CHROME
+
+            if(typeof window.chrome != "object") {
+                // not Chrome
+                console.log( "This is not Chrome!" );
+            } else {
+                // it's Chrome (or some fork of Chromium)
+                console.log( "This is Chrome!" );
+                $(function() {
+                    jQuery.scrollSpeed(40, 800);
+                });
+            }
+
         </script>
 
     </body>
