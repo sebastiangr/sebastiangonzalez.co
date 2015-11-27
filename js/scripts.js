@@ -12,6 +12,12 @@ var main = ( function($){
         $btnNext = $(".next"),
         $btnPrev = $(".prev");
 
+
+    // MOBILE NAVIGATION
+    var navMob = $('.overlay-mobile');
+    var $btnmobile = $("#bt-menu-mobile");
+
+
     var settings = { verbose: false }, tapTargets, scrollPos, oneOff;
 
     var init = function( options ){
@@ -114,10 +120,32 @@ var main = ( function($){
     // Custom Navigation Events
     $btnNext.click(function(){
         owl.trigger("owl.next");
-    })
+    });
     $btnPrev.click(function(){
         owl.trigger("owl.prev");
-    })
+    });
+
+
+
+
+    // MENU MOBILE ÍCONO HAMBURGUER
+    $btnmobile.click(function(){
+        if($(this).hasClass("close-bt-hamburguer")){
+            navMob.slideUp(400);
+            // aparecer logo al salir de mobile
+            $('.logoSticky').fadeIn(200);
+            $(this).removeClass("close-bt-hamburguer");
+        }
+        else
+        {
+            navMob.slideDown(400);
+            // quitar logo al entrar en menú mobile
+            $('.logoSticky').fadeOut(200);
+            $(this).addClass("close-bt-hamburguer");
+        }
+
+        return false;
+    });
 
 
     /** Public API */
